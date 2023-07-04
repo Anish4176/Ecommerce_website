@@ -11,7 +11,7 @@ export default function Home() {
     <>
         
         <div>
-        <img src="/background1.jpg" alt="" style={{background:"url('/background1.jpg') no-repeat ; height: 67vh; width: 100%;"}}/>
+        <img src="/back.webp" alt="" style={{background:"url('/back.webp') no-repeat , height: 67vh, width: 100%, "}}/>
 
         </div>
         <Header/>

@@ -3,79 +3,77 @@ import React from 'react'
 import Image from 'next/image'
 function Footer() {
   return (
-    <div><footer className="text-gray-600 body-font">
+    <div><footer className="text-gray-600 body-font mx-auto">
     <div className="container py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-      <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <div className="w-64 flex-shrink-0 md:mx-5 mx-auto text-center md:text-left">
         <Link href={"/"}>  
         <div className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <Image src="/logo.png" alt=""height={90}width={400} />
         </div>
         </Link>
-        <p className="mt-2 text-sm text-gray-500 px-4">Air plant banjo lyft occupy retro adaptogen indego</p>
+        <p className="mt-2 text-sm text-gray-500 font-bold px-4">Wear the Brand</p>
       </div>
       <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SHOP</h2>
           <nav className="list-none mb-10">
             <li>
-              <a className="text-gray-600 hover:text-gray-800">First Link</a>
+             <Link href={'/tshirt'} className="text-gray-600 hover:text-gray-800">Tshirts</Link>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+             <Link href={'/hoodies'} className="text-gray-600 hover:text-gray-800">Hoodies</Link>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+             <Link href={'/caps'} className="text-gray-600 hover:text-gray-800">Caps</Link>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+             <Link href={'/mugs'} className="text-gray-600 hover:text-gray-800">Mugs</Link>
             </li>
           </nav>
         </div>
         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">ABOUT</h2>
           <nav className="list-none mb-10">
             <li>
-              <a className="text-gray-600 hover:text-gray-800">First Link</a>
+              <a className="text-gray-600 hover:text-gray-800">Contact Us</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+              <a className="text-gray-600 hover:text-gray-800">About Us</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+              <a className="text-gray-600 hover:text-gray-800">Carriers</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+              <a className="text-gray-600 hover:text-gray-800">Press</a>
             </li>
           </nav>
         </div>
         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">HELP</h2>
           <nav className="list-none mb-10">
             <li>
-              <a className="text-gray-600 hover:text-gray-800">First Link</a>
+              <a className="text-gray-600 hover:text-gray-800">Payments</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+              <a className="text-gray-600 hover:text-gray-800">Shipping</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+              <a className="text-gray-600 hover:text-gray-800">Cancellations & Returns</a>
             </li>
-            <li>
-              <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-            </li>
+            
           </nav>
         </div>
         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SOCIAL</h2>
           <nav className="list-none mb-10">
             <li>
-              <a className="text-gray-600 hover:text-gray-800">First Link</a>
+              <a className="text-gray-600 hover:text-gray-800">Twitter</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+              <a className="text-gray-600 hover:text-gray-800">Facebook</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+              <a className="text-gray-600 hover:text-gray-800">Youtube</a>
             </li>
             <li>
               <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
