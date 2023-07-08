@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 function Forgotpassword() {
+  
+  useEffect(() => {
+    if (localStorage.getItem('USER')){
+      router.push('/');
+    }
+   }, [])
   return (
     <div>
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">

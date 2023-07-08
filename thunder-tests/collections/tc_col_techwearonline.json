@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-07-02T08:40:52.777Z",
-            "modified": "2023-07-03T13:37:33.243Z",
+            "modified": "2023-07-04T05:43:10.594Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "[{\n\"title\":\"techwearonline\",\n\"slug\":\"tech-wear-onhdliSpfDne23\",\n\"desc\":\"req.body[i].title.desc\",\n\"price\":499,\n\"img\":\"req.body[i].title.img\",\n\"size\":\"XL\",\n\"color\":\"Blue\",\n\"category\":\"tshirts\",\n\"availableQty\":1\n}]",
+                "raw": "[{\n\"title\":\"mousepadonline\",\n\"slug\":\"tech-sqhearefr-oeh4dliSpfDne23\",\n\"desc\":\"req.body[i].title.desc\",\n\"price\":1499,\n\"img\":\"https://rukminim1.flixcart.com/image/416/416/xif0q/mousepad/8/v/a/mouse-pad-motivational-mouse-pade-good-vibe-mouse-pad-for-original-imaghmqqpxmkgcnb.jpeg?q=70\",\n\"size\":\"XL\",\n\"color\":\"Red\",\n\"category\":\"mousepads\",\n\"availableQty\":1\n}]",
                 "form": []
             },
             "tests": []
@@ -53,6 +53,44 @@
             "body": {
                 "type": "json",
                 "raw": " [\r\n    {\r\n      \"_id\": \"64a13c5e58f860cec4893848\",\r\n      \"title\": \"techwearonline\",\r\n      \"slug\": \"tech-wear-online3\",\r\n      \"desc\": \"req.body[i].title.desc\",\r\n      \"price\": 499,\r\n      \"img\": \"req.body[i].title.img\",\r\n      \"size\": \"XL\",\r\n      \"color\": \"Red\",\r\n      \"category\": \"tshirts\",\r\n      \"availableQty\": 1,\r\n      \"createdAt\": \"2023-07-02T08:59:10.237Z\",\r\n      \"updatedAt\": \"2023-07-02T08:59:10.237Z\",\r\n      \"__v\": 0\r\n    },\r\n    {\r\n      \"_id\": \"64a13c5e58f860cec489384b\",\r\n      \"title\": \"techwearonline\",\r\n      \"slug\": \"tech-wear-online4\",\r\n      \"desc\": \"req.body[i].title.desc\",\r\n      \"price\": 499,\r\n      \"img\": \"req.body[i].title.img\",\r\n      \"size\": \"XL\",\r\n      \"color\": \"Red\",\r\n      \"category\": \"tshirts\",\r\n      \"availableQty\": 1,\r\n      \"createdAt\": \"2023-07-02T08:59:10.250Z\",\r\n      \"updatedAt\": \"2023-07-02T08:59:10.250Z\",\r\n      \"__v\": 0\r\n    }\r\n  ]\r\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "055b81af-9c6b-4c6f-89ab-f42aea9eec4e",
+            "colId": "5e3aa0df-3e8c-4376-b540-07e4e0951ddf",
+            "containerId": "",
+            "name": "adduser",
+            "url": "http://localhost:3000/api/signup",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-07-04T06:02:12.857Z",
+            "modified": "2023-07-04T06:11:41.988Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"ANISH KUMAR SINGH\",\n  \"email\":\"anishsin2gh4176@gmail.com\",\n  \"password\":\"1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b345aa65-5460-4c3b-873d-7449deb2c437",
+            "colId": "5e3aa0df-3e8c-4376-b540-07e4e0951ddf",
+            "containerId": "",
+            "name": "loginuser",
+            "url": "http://localhost:3000/api/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-07-04T13:58:45.342Z",
+            "modified": "2023-07-04T14:00:25.957Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"anishsingh41764176@gmail.com\",\n  \"password\":\"12\"\n}",
                 "form": []
             },
             "tests": []

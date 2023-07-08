@@ -12,7 +12,8 @@ module.exports = {
     extend: {
       colors: {
         metal: "#f2e3ff",
-        maincolor:"#783AB1"
+        maincolor:"#783AB1",
+        submaincolor:"#b47be8"
       },
     },
   },

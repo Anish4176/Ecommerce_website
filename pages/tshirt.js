@@ -14,7 +14,7 @@ function Tshirt({ tshirt }) {
           <div className="flex justify-center flex-wrap -m-4 space-x-6">
             {Object.keys(tshirt).map((element) => {
               {console.log(tshirt[element].color)}
-              return <Link key={tshirt[element]._id} href={'/product/wear-the-code'}>
+              return <Link key={tshirt[element]._id} href={`/product/${tshirt[element].slug}`}>
                 <div className=" p-2 mx-auto lg:mx-1 cursor-pointer shadow-md m-2">
                   <div className="block relative 
                rounded overflow-hidden">

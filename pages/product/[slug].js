@@ -2,6 +2,8 @@ import { useRouter } from 'next/router';
 import React, { useState, useCallback } from 'react'
 import mongoose from 'mongoose';
 import Product from '@/model/Product';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Slug({ addToCart, product, variants ,buyCart}) {
 
@@ -12,16 +14,36 @@ function Slug({ addToCart, product, variants ,buyCart}) {
   const [pin, setpin] = useState(null);
 
   const handlepincheck = async () => {
-    const response = await fetch('http://localhost:3000/api/pincode');
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
     const checkpin = await response.json();
 
     for (let i of checkpin) {
       if (Number.parseInt(pin) === i) {
         setservice(true);
+        toast.success('Your pincode is serviceable', {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
         return;
       }
     }
     setservice(false);
+    toast.error('Sorry, pincode not serviceable', {
+      position: "bottom-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   }
   const onchange = (e) => {
     setpin(e.target.value);
@@ -30,12 +52,24 @@ function Slug({ addToCart, product, variants ,buyCart}) {
   const [size, setsize] = useState(product.size)
   const [color, setcolor] = useState(product.color)
   const refreshvariant = (size, color) => {
-    let url = `http://localhost:3000/product/${variants[color][size]['slug']}`
+    let url = `${process.env.NEXT_PUBLIC_HOST}/product/${variants[color][size]['slug']}`
     window.location = url;
   }
 
   return (
     <div>
+            <ToastContainer
+          position="bottom-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          />
       <section className="text-gray-600 body-font overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex justify-center flex-wrap">
@@ -111,7 +145,7 @@ function Slug({ addToCart, product, variants ,buyCart}) {
               </div>
 
               <div className="flex">
-                <span className="title-font font-medium text-2xl text-gray-900">₹499.00</span>
+                <span className="title-font font-medium text-2xl text-gray-900">₹{product.price}</span>
 
                 <button onClick={() => { buyCart(slug, 1, 499,product.title ,product.color, product.size)} }className="flex ml-8 text-white bg-maincolor border-0 py-2 px-6 focus:outline-none hover:bg-maincolor rounded">Buy Now</button>
 
@@ -148,7 +182,7 @@ export async function getServerSideProps(context) {
   }
 
   const getproduct = await Product.findOne({ slug: context.query.slug });
-  const variants = await Product.find({ title: getproduct.title })
+  const variants = await Product.find({ title: getproduct.title ,category: getproduct.category})
   const ColorSizeSlug = {}  //{red:{XL:{slug:wear-the-code}}}
   for (let item of variants) {
     if (Object.keys(ColorSizeSlug).includes(item.color)) {

@@ -1,48 +1,64 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Order from '@/model/Order'
+const mongoose = require('mongoose')
+import { useRouter } from 'next/router';
 
 function Orders() {
-  return (
-    <div>
-        <section className="text-gray-600 body-font overflow-hidden">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="lg:w-4/5 mx-auto flex flex-wrap">
-      <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-        <h2 className="text-sm title-font text-gray-500 tracking-widest">TECHWEARONLINE</h2>
-        <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">Order Id:#7689</h1>
-        <p className="leading-relaxed mb-4">Your Order has been successfully placed!        </p>
-        <div className="flex mb-4 border-b-2 ">
-          <a className="flex-grow text-maincolor  border-maincolor py-2 text-lg px-1">Item Description</a>
-          <a className="flex-grow text-center border-gray-300 py-2 text-lg px-1">Quantity</a>
-          <a className="flex-grow text-end border-gray-300 py-2 text-lg px-1">Price</a>
+    const router= useRouter();
+    useEffect(() => {
+        if (!localStorage.getItem('USER')){
+          router.push('/');
+        }
+       }, [])
+    return (
+        <div className='container '>
+            <h1 className='text-center font-semibold text-3xl mt-4 py-2'>Orders</h1>
+            <div class="flex flex-col container mx-auto max-w-screen-lg">
+                <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                        <div class="overflow-hidden">
+                            <table class="min-w-full text-left text-sm font-light">
+                                <thead class="border-b font-medium dark:border-neutral-500">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-4">#</th>
+                                        <th scope="col" class="px-6 py-4">First</th>
+                                        <th scope="col" class="px-6 py-4">Last</th>
+                                        <th scope="col" class="px-6 py-4">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-200">
+                                        <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
+                                        <td class="whitespace-nowrap px-6 py-4">Mark</td>
+                                        <td class="whitespace-nowrap px-6 py-4">Otto</td>
+                                        <td class="whitespace-nowrap px-6 py-4">@mdo</td>
+                                    </tr>
+                                    <tr
+                                        class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-200">
+                                        <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
+                                        <td class="whitespace-nowrap px-6 py-4">Jacob</td>
+                                        <td class="whitespace-nowrap px-6 py-4">Thornton</td>
+                                        <td class="whitespace-nowrap px-6 py-4">@fat</td>
+                                    </tr>
+                                    <tr
+                                        class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-200">
+                                        <td class="whitespace-nowrap px-6 py-4 font-medium">3</td>
+                                        <td class="whitespace-nowrap px-6 py-4">Larry</td>
+                                        <td class="whitespace-nowrap px-6 py-4">Wild</td>
+                                        <td class="whitespace-nowrap px-6 py-4">@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div className="flex border-t border-gray-200 py-2">
-          <span className="text-gray-500">Wear the Code</span>
-          <span className="ml-auto text-gray-900">1</span>
-          <span className="ml-auto text-gray-900">₹499</span>
-        </div>
-        <div className="flex border-t border-gray-200 py-2">
-        <span className="text-gray-500">Wear the Code</span>
-          <span className="ml-auto text-gray-900">1</span>
-          <span className="ml-auto text-gray-900">₹499</span>
-        </div>
-        <div className="flex border-t border-b mb-6 border-gray-200 py-2">
-        <span className="text-gray-500">Wear the Code</span>
-          <span className="ml-auto text-gray-900">1</span>
-          <span className="ml-auto text-gray-900">₹499</span>
-        </div>
-        <div className="flex flex-col">
-          <span className="title-font font-medium text-2xl text-gray-900">₹1158.00</span>
-          <button className="flex mx-0 text-white my-3 w-32 bg-maincolor border-0 p-2 pl-4  focus:outline-none hover:bg-maincolor rounded">Track Order</button>
-          
-        </div>
-      </div>
-      <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400"/>
-    </div>
-  </div>
-</section>
-    </div>
-  )
+    )
 }
+
+
+
 
 export default Orders
