@@ -68,16 +68,16 @@ export async function getServerSideProps() {
     
     for(let items of getproduct){
       if(items.title in mousepad){
-        if( !mousepad[items.title].color.includes(items.color) && items.availableQty >0){
+        if( !mousepad[items.title].color.includes(items.color) && items.availableQty >=0){
           mousepad[items.title].color.push(items.color);
         }
-        if( !mousepad[items.title].size.includes(items.size) && items.availableQty >0){
+        if( !mousepad[items.title].size.includes(items.size) && items.availableQty >=0){
           mousepad[items.title].size.push(items.size);
         }
       }
       else{
         mousepad[items.title] = JSON.parse(JSON.stringify(items));
-        if(items.availableQty >0){
+        if(items.availableQty >=0){
           mousepad[items.title].color=[items.color];
           mousepad[items.title].size=[items.size];
         }

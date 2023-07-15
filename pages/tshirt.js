@@ -5,7 +5,7 @@ import Product from '@/model/Product';
 
 
 function Tshirt({ tshirt }) {
-  
+  console.log(tshirt)
 
   return (
     <div>
@@ -64,16 +64,17 @@ export async function getServerSideProps() {
     
     for(let items of getproduct){
       if(items.title in tshirt){
-        if( !tshirt[items.title].color.includes(items.color) && items.availableQty >0){
+       
+        if( !tshirt[items.title].color.includes(items.color) && items.availableQty >=0){
           tshirt[items.title].color.push(items.color);
         }
-        if( !tshirt[items.title].size.includes(items.size) && items.availableQty >0){
+        if( !tshirt[items.title].size.includes(items.size) && items.availableQty >=0){
           tshirt[items.title].size.push(items.size);
         }
       }
       else{
         tshirt[items.title] = JSON.parse(JSON.stringify(items));
-        if(items.availableQty >0){
+        if(items.availableQty >=0){
           tshirt[items.title].color=[items.color];
           tshirt[items.title].size=[items.size];
         }

@@ -1,13 +1,47 @@
 import connectDb from "@/middleware/mongoose";
 import Order from "@/model/Order";
+import Product from "@/model/Product";
+import pincodes from '../../thunder-tests/pincode.json';
 
 const handler = async (req, res) => {
+    function isNumeric(value) {
+        return /^-?\d+$/.test(value);
+    }
+   
+    
+    //check if the cart is tampered  
+    let cart = req.body.cart;
+    let sumtotal = 0;
+    for (let item in cart) {
+        let itemproduct = await Product.findOne({ slug: item });
+        sumtotal += cart[item].price * cart[item].qty;
+        //check if the item is out of stock 
+        if (itemproduct.availableQty < cart[item].qty) {
+            res.status(200).json({ success: false, error: 'Some items in your cart is out of stock!',clearcart:false })
+            return;
+        }
+        if (itemproduct.price != cart[item].price) {
+            res.status(200).json({ success: false, error: 'Your cart has been tampered',clearcart:true  })
+            return;
+        }
+    }
 
-    //check if the cart is tampered  ---[pending]
-
-    //check if the item is out of stock ---[pending]
 
     //check if the details are valid ---[pending]
+    if(req.body.phone.length !=10 || !isNumeric(req.body.phone)){
+        res.status(200).json({ success: false, error: 'Please enter your 10 digit phone number' ,clearcart:false })
+        return;
+    }
+    if(req.body.pincode.length !=6 || !isNumeric(req.body.pincode)){
+        res.status(200).json({ success: false, error: 'Please enter your 6 digit pincode',clearcart:false })
+        return;
+    }
+ //check if pincode is servicable
+ if(!Object.keys(pincodes).includes(req.body.pincode)){
+    res.status(200).json({ success: false, error: 'Sorry! We do not deliver to this pincode yet',clearcart:false })
+    return;
+   }
+
     try {
         let orderdetails = new Order({
             email: req.body.email,
@@ -17,17 +51,17 @@ const handler = async (req, res) => {
             address: req.body.address,
             status: 'success'
         })
-       let a= await orderdetails.save();
-       console.log('this is a '+ a);
+        let a = await orderdetails.save();
+        for(let slug in a.products) {
+          await Product.findOneAndUpdate({slug:slug},{$inc : {'availableQty' : - a.products[slug].qty}})
+        }
+       
+        console.log('this is a ' + a);
         res.status(200).json({ success: true })
-        
-        // let order=await Order.findById({orderid: req.body.orderId})
-        
-        // res.redirect(`/order?id=` + order._id ,200)
-      
+
 
     } catch (err) {
-        res.status(200).json({ success: false, error: 'Some error occured' })
+        res.status(200).json({ success: false, error: 'Some error occured',clearcart:false })
     }
 
 }

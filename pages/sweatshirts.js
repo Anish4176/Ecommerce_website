@@ -68,16 +68,16 @@ export async function getServerSideProps() {
     
     for(let items of getproduct){
       if(items.title in sweatshirt){
-        if( !sweatshirt[items.title].color.includes(items.color) && items.availableQty >0){
+        if( !sweatshirt[items.title].color.includes(items.color) && items.availableQty >=0){
           sweatshirt[items.title].color.push(items.color);
         }
-        if( !sweatshirt[items.title].size.includes(items.size) && items.availableQty >0){
+        if( !sweatshirt[items.title].size.includes(items.size) && items.availableQty >=0){
           sweatshirt[items.title].size.push(items.size);
         }
       }
       else{
         sweatshirt[items.title] = JSON.parse(JSON.stringify(items));
-        if(items.availableQty >0){
+        if(items.availableQty >=0){
           sweatshirt[items.title].color=[items.color];
           sweatshirt[items.title].size=[items.size];
         }

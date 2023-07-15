@@ -33,7 +33,7 @@ function Login() {
     setemail('');
 
     if (data.success) {
-      localStorage.setItem('USER',data.token);
+      localStorage.setItem('USER',JSON.stringify({token:data.token,email:data.useremail}));
       toast.success('Logged in Successfully', {
         position: "top-right",
         autoClose: 3000,

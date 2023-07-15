@@ -12,7 +12,13 @@ export default function App({ Component, pageProps }) {
   const [subtotal, setsubtotal] = useState(0)
   const [user, setuser] = useState({ value: null })
   const [progress, setProgress] = useState(0)
+  const [sidebar, setsidebar] = useState(false);
 
+
+  const handlesidecart = () => {
+    setsidebar(!sidebar);
+
+  }
   useEffect(() => {
     try {
       router.events.on('routeChangeStart', ()=>{
@@ -59,7 +65,20 @@ export default function App({ Component, pageProps }) {
     }
     setcart(newCart);
     savecart(newCart);
-
+    setsidebar(true);
+  }
+  const addToCartincheckout = (itemcode, qty, price, name, variant, size) => {
+    // setsidebar(false);
+    let newCart = { ...cart };
+    if (itemcode in cart) {
+      newCart[itemcode].qty = cart[itemcode].qty + qty;
+    }
+    else {
+      newCart[itemcode] = { qty: 1, price, name, variant, size };
+    }
+    setcart(newCart);
+    savecart(newCart);
+   
   }
   const removeFromCart = (itemcode, qty, price, name, variant, size) => {
     let newCart = { ...cart };
@@ -103,8 +122,8 @@ export default function App({ Component, pageProps }) {
       progress={progress}
       onLoaderFinished={() => setProgress(0)}
     />
-    <Navbar logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />
-    <Component cart={cart} addToCart={addToCart} buyCart={buyCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} {...pageProps} />
+    <Navbar sidebar={sidebar} setsidebar={setsidebar} onClick= {handlesidecart} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />
+    <Component sidebar={sidebar} onClick={handlesidecart} cart={cart} addToCartincheckout={addToCartincheckout} addToCart={addToCart} buyCart={buyCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} {...pageProps} />
     <Footer />
   </>
 }
