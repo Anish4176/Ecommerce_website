@@ -7,6 +7,9 @@ const OrderSchema = new mongoose.Schema({
     products:{type:Object,required:true},
     amount:{type:String ,required:true},
     address:{type:String ,required: true},
+    phone:{type:Number ,required: true},
+    pincode:{type:Number ,required: true},
+    name:{type:String ,required:true},
     status:{type:String ,default:'Pending', required: true}
 },{timestamps:true});
 mongoose.models={}

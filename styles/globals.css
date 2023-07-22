@@ -1,8 +1,13 @@
-@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@600&family=Merriweather:ital,wght@1,700&family=Pangolin&family=Ubuntu&display=swap');
 @tailwind components;
+@tailwind base;
 @tailwind utilities;
 
-*{
+/* body{
+    background-color: #1F2937;
+    color:white;
+} */
+* {
     margin: 0;
-    padding:0;
+    padding: 0;
 }

@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Error from 'next/error'
 
-function Slug({ addToCart, product, variants ,buyCart,error}) {
+function Slug({isdark, addToCart, product, variants ,buyCart,error}) {
   if (error==404) {
     return <Error statusCode={404} />
   }
@@ -80,13 +80,13 @@ function Slug({ addToCart, product, variants ,buyCart,error}) {
           pauseOnHover
           theme="light"
           />
-      <section className="text-gray-600 body-font overflow-hidden">
+      <section className={`${isdark?'bg-darkgreyish':'bg-white'} text-gray-600 body-font overflow-hidden`}>
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex justify-center flex-wrap">
             <img alt="ecommerce" className="lg:w-[50vh]  w-[96] lg:h-[60vh] h-[50vh]  object-top rounded" src={product.img} />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-3 mt-6 lg:mt-0">
-              <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
-              <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{product.title} ({product.size} / {product.color}) </h1>
+              <h2 className="text-sm title-font text-gray-500 tracking-widest">TechWearOnline</h2>
+              <h1 className={`${isdark?'text-white':'text-gray-900'} text-3xl title-font font-medium mb-1`}>{product.title} ({product.size} / {product.color}) </h1>
               {/* <div className="flex mb-4">
                 <span className="flex items-center">
                   <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-maincolor" viewBox="0 0 24 24">
@@ -124,10 +124,10 @@ function Slug({ addToCart, product, variants ,buyCart,error}) {
                   </a>
                 </span>
               </div> */}
-              <p className="leading-relaxed">{product.desc} </p>
+              <p className={`${isdark?'text-white':'text-gray-900'} leading-relaxed`}>{product.desc} </p>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5 ">
                 <div className="flex space-x-1">
-                  <span className="mr-3">Color</span>
+                  <span className={`${isdark?'text-white':'text-gray-900'} mr-3`}>Color</span>
                   {Object.keys(variants).includes('Red') && Object.keys(variants['Red']).includes(size) && <button className={`border-2 ${color == 'Red' ? 'border-black' : 'border-gray-300'}   bg-red-500 rounded-full w-6 h-6 focus:outline-none`} onClick={() => { refreshvariant(size, 'Red') }}></button>}
                   {Object.keys(variants).includes('Blue') && Object.keys(variants['Blue']).includes(size) && <button className={`border-2 ${color == 'Blue' ? 'border-black' : 'border-gray-300'}   bg-blue-500 rounded-full w-6 h-6 focus:outline-none`} onClick={() => { refreshvariant(size, 'Blue') }}></button>}
                   {Object.keys(variants).includes('Green') && Object.keys(variants['Green']).includes(size) && <button className={`border-2 ${color == 'Green' ? 'border-black' : 'border-gray-300'}   bg-green-500 rounded-full w-6 h-6 focus:outline-none`} onClick={() => { refreshvariant(size, 'Green') }}></button>}
@@ -135,7 +135,7 @@ function Slug({ addToCart, product, variants ,buyCart,error}) {
                   {Object.keys(variants).includes('Black') && Object.keys(variants['Black']).includes(size) && <button className={`border-2 ${color == 'Black' ? 'border-black' : 'border-gray-300'}   bg-black    rounded-full w-6 h-6 focus:outline-none`} onClick={() => { refreshvariant(size, 'Black') }}></button>}
                 </div>
                 <div className="flex ml-6 items-center">
-                  <span className="mr-3">Size</span>
+                  <span className={`${isdark?'text-white':'text-gray-900'} mr-3`}>Size</span>
                   <div className="relative">
                     <select value={size} onChange={(e) => { refreshvariant(e.target.value, color) }} className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10">
                       {Object.keys(variants[color]).includes('S') && <option value={'S'}>S</option>}
@@ -155,7 +155,7 @@ function Slug({ addToCart, product, variants ,buyCart,error}) {
               </div>
 
               <div className="flex">
-                {product.availableQty>0 && <span className="title-font font-medium text-2xl text-gray-900">₹{product.price}</span>}
+                {product.availableQty>0 && <span className={`${isdark?'text-white':'text-gray-900'} title-font font-medium text-2xl text-gray-900`}>₹{product.price}</span>}
                 {product.availableQty<=0 && <span className="title-font font-medium text-red-500 text-2xl ">Out of Stock!</span>}
 
                 <button disabled={product.availableQty<=0} onClick={() => { buyCart(slug, 1, product.price,product.title ,product.color, product.size)} }className="  flex disabled:bg-submaincolor ml-8 text-white bg-maincolor border-0 py-2 px-6 focus:outline-none hover:bg-maincolor rounded">Buy Now</button>

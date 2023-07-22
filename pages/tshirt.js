@@ -2,28 +2,31 @@ import Link from 'next/link'
 import React from 'react'
 const mongoose = require('mongoose');
 import Product from '@/model/Product';
+import Head from 'next/head';
 
-
-function Tshirt({ tshirt }) {
+function Tshirt({isdark, tshirt }) {
   console.log(tshirt)
 
   return (
     <div>
-      <section className="text-gray-600 body-font">
+      <Head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+      <title>Tshirts | Techwearonline</title>
+      </Head>
+      <section className={`min-h-screen  ${isdark? 'bg-darkgreyish':'bg-white'} text-gray-600 body-font`}>
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex justify-center flex-wrap -m-4 space-x-6">
+          <div className="flex justify-center flex-wrap -m-4  ">
             {Object.keys(tshirt).map((element) => {
-              {console.log(tshirt[element].color)}
+              // {console.log(tshirt[element].color)}
               return <Link key={tshirt[element]._id} href={`/product/${tshirt[element].slug}`}>
-                <div className=" p-2 mx-auto lg:mx-1 cursor-pointer shadow-md m-2">
+                <div className={`p-2 mx-auto rounded-lg ${isdark? 'bg-lightgreyish':'bg-white'} lg:mx-3 cursor-pointer shadow-lg m-2`}>
                   <div className="block relative 
                rounded overflow-hidden">
                     <img alt="ecommerce" className="m-auto h-[40vh] w-[40vh] block" src={tshirt[element].img} />
                   </div>
                   <div className="mt-4 mx-2">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{tshirt[element].category}</h3>
-                    <h2 className="text-gray-900 title-font text-lg font-medium">{tshirt[element].title}</h2>
-                    <p className="mt-1">₹{tshirt[element].price}</p>
+                    <h2 className={`${isdark?'text-white':'text-gray-900'}  title-font text-lg font-medium`}>{tshirt[element].title}</h2>
+                    <p className={`${isdark?'text-white':'text-gray-900'} mt-1`}  >₹{tshirt[element].price}</p>
                     <p className="my-2 space-x-2">
                       {tshirt[element].color.includes('Red') &&  <button className="border-2 border-gray-300  bg-red-500 rounded-full w-6 h-6 focus:outline-none"></button> }
                       {tshirt[element].color.includes('Blue') &&  <button className="border-2 border-gray-300  bg-blue-600 rounded-full w-6 h-6 focus:outline-none"></button> }
@@ -34,11 +37,11 @@ function Tshirt({ tshirt }) {
   
                      </p>
                     <p className="my-3 space-x-2">
-                      {tshirt[element].size.includes('S') && <span className='border border-gray-600 p-1'>S</span> }
-                      {tshirt[element].size.includes('M') && <span className='border border-gray-600  p-1'>M</span> }
-                      {tshirt[element].size.includes('L') && <span className='border border-gray-600  p-1'>L</span> }
-                      {tshirt[element].size.includes('XL') && <span className='border border-gray-600  p-1'>XL</span> }
-                      {tshirt[element].size.includes('XXL') && <span className='border border-gray-600  p-1'>XXL</span> }
+                      {tshirt[element].size.includes('S') && <span className={`border ${isdark?'text-white':'text-black'} ${isdark?'border-white':'border-gray-600'}   p-1`}>S</span> }
+                      {tshirt[element].size.includes('M') && <span className={`border ${isdark?'text-white':'text-black'} ${isdark?'border-white':'border-gray-600'}   p-1`}>M</span> }
+                      {tshirt[element].size.includes('L') && <span className={`border ${isdark?'text-white':'text-black'} ${isdark?'border-white':'border-gray-600'}   p-1`}>L</span> }
+                      {tshirt[element].size.includes('XL') && <span className={`border ${isdark?'text-white':'text-black'} ${isdark?'border-white':'border-gray-600'}   p-1`}>XL</span> }
+                      {tshirt[element].size.includes('XXL') && <span className={`border ${isdark?'text-white':'text-black'} ${isdark?'border-white':'border-gray-600'}   p-1`}>XXL</span> }
   
                      </p>
                   </div>

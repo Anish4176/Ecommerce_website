@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
-function Footer() {
+function Footer({isdark}) {
   return (
-    <div><footer className="text-gray-600 body-font mx-auto">
+    <div><footer className={`text-gray-600 ${isdark? 'text-white':'text-black'} ${isdark? 'bg-black':'bg-gray-100'}  body-font mx-auto`}>
     <div className="container py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
       <div className="w-64 flex-shrink-0 md:mx-5 mx-auto text-center md:text-left">
         <Link href={"/"}>  
@@ -11,81 +11,81 @@ function Footer() {
           <Image src="/logo.png" alt=""height={90}width={400} />
         </div>
         </Link>
-        <p className="mt-2 text-sm text-gray-500 font-bold px-4">Wear the Brand</p>
+        <p className="mt-2 text-sm font-bold px-4">Wear the Brand</p>
       </div>
       <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SHOP</h2>
+          <h2 className="title-font font-medium  tracking-widest text-sm mb-3">SHOP</h2>
           <nav className="list-none mb-10">
             <li>
-             <Link href={'/tshirt'} className="text-gray-600 hover:text-gray-800">Tshirts</Link>
+             <Link href={'/tshirt'} className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Tshirts</Link>
             </li>
             <li>
-             <Link href={'/hoodies'} className="text-gray-600 hover:text-gray-800">Hoodies</Link>
+             <Link href={'/hoodies'} className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Hoodies</Link>
             </li>
             <li>
-             <Link href={'/caps'} className="text-gray-600 hover:text-gray-800">Caps</Link>
+             <Link href={'/caps'} className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Caps</Link>
             </li>
             <li>
-             <Link href={'/mugs'} className="text-gray-600 hover:text-gray-800">Mugs</Link>
+             <Link href={'/mugs'} className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Mugs</Link>
             </li>
           </nav>
         </div>
         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">ABOUT</h2>
-          <nav className="list-none mb-10">
+          <h2 className="title-font font-medium  tracking-widest text-sm mb-3">ABOUT</h2>
+          <nav className="list-none mb-10 cursor-pointer">
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Contact Us</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Contact Us</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">About Us</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>About Us</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Carriers</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Carriers</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Press</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Press</a>
             </li>
           </nav>
         </div>
         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">HELP</h2>
-          <nav className="list-none mb-10">
+          <h2 className="title-font font-medium  tracking-widest text-sm mb-3">HELP</h2>
+          <nav className="list-none mb-10 cursor-pointer">
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Payments</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Payments</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Shipping</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Shipping</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Cancellations & Returns</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Cancellations & Returns</a>
             </li>
             
           </nav>
         </div>
         <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SOCIAL</h2>
-          <nav className="list-none mb-10">
+          <h2 className="title-font font-medium  tracking-widest text-sm mb-3">SOCIAL</h2>
+          <nav className="list-none mb-10 cursor-pointer">
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Twitter</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Twitter</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Facebook</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Facebook</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Youtube</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Youtube</a>
             </li>
             <li>
-              <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+              <a className={`${isdark?'text-gray-400':'text-black'}  hover:text-maincolor`}>Fourth Link</a>
             </li>
           </nav>
         </div>
       </div>
     </div>
-    <div className="bg-gray-100">
+    <div className={`${isdark?'bg-darkgreyish':'bg-white'}`}>
       <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-        <p className="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
-          <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@knyttneve</a>
+        <p className="text-gray-500 text-sm text-center sm:text-left">© 2023 Techwearonline —
+          <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">All Rights Reserved</a>
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
           <a className="text-gray-500">

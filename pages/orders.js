@@ -3,8 +3,8 @@ import Order from '@/model/Order'
 const mongoose = require('mongoose')
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-
-function Orders() {
+import Head from 'next/head';
+function Orders({isdark}) {
     const router = useRouter();
     const [orders, setorders] = useState([]);
     useEffect(() => {
@@ -28,8 +28,12 @@ function Orders() {
         }
     }, [])
     return (
-        <div className='container min-h-screen'>
-            <h1 className='text-center font-semibold text-3xl mt-4 py-2'>Orders</h1>
+        <div className={` ${isdark? 'bg-darkgreyish':'bg-white'} ${isdark? 'text-white':'text-black'}  min-h-screen mx-auto`}>
+            <Head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+      <title> Orders | Techwearonline</title>
+      </Head>
+     
+            <h1 style={{fontFamily:'Bitter'}} className='text-center font-semibold text-3xl pt-4 py-2'>Orders</h1>
             <div className="flex flex-col container mx-auto max-w-screen-lg">
                 <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
@@ -59,6 +63,7 @@ function Orders() {
                 </div>
             </div>
         </div>
+       
     )
 }
 

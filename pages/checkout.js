@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
 
 
-function Checkout({ cart, clearCart,addToCartincheckout, addToCart, removeFromCart, subtotal }) {
+function Checkout({isdark, cart, clearCart, addToCartincheckout, addToCart, removeFromCart, subtotal }) {
   const router = useRouter();
   const [disabled, setdisabled] = useState(true);
   const [name, setname] = useState('')
@@ -25,15 +25,56 @@ function Checkout({ cart, clearCart,addToCartincheckout, addToCart, removeFromCa
     const user = JSON.parse(localStorage.getItem('USER'));
 
     if (user) {
-      console.log(user);
       setuser(user)
       setemail(user.email)
-
+      fetchuser(user.token)
+      if (name && email && address && phone && pincode) {
+        setdisabled(false);
+      }
     }
+
 
   }, [])
 
- 
+  const fetchuser = async (token) => {
+    const data = token;
+    // console.log('data', data);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    let res = await response.json();
+    // console.log('res', res);
+    setname(res.name);
+    setaddress(res.address);
+    setphone(res.phone);
+    getpincode(res.pincode);
+
+  }
+
+  const getpincode = async (pin) => {
+    setpincode(pin)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
+    const checkpin = await response.json();
+    pin=pin.trim();
+    if (Object.keys(checkpin).includes(pin)) {
+      setservice(true);
+      setcity(checkpin[pin][0]);
+      setstate(checkpin[pin][1]);
+      setdisabled(false);
+      {console.log(name,email,address,phone,pincode)}
+     
+    }
+    else {
+      setservice(false);
+
+      setcity('');
+      setstate('');
+    }
+  }
   const onchange = async (e) => {
 
     if (e.target.name === 'name') {
@@ -49,25 +90,15 @@ function Checkout({ cart, clearCart,addToCartincheckout, addToCart, removeFromCa
       setphone(e.target.value)
     }
     if (e.target.name === 'pincode') {
-      setpincode(e.target.value)
-      if (e.target.value.length == 6) {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
-        const checkpin = await response.json();
-        if (Object.keys(checkpin).includes(e.target.value)) {
-          setservice(true);
-          setcity(checkpin[e.target.value][0]);
-          setstate(checkpin[e.target.value][1]);
-        }
-        else {
-          setservice(false);
-         
-          setcity('');
-          setstate('');
-        }
+      let pinc=e.target.value
+      pinc=pinc.trim();
+     setpincode(pinc);
+      if (pinc.length == 6) {
+        getpincode(e.target.value);
       }
       else {
         setservice(null);
-  
+
         setcity('');
         setstate('');
       }
@@ -84,7 +115,7 @@ function Checkout({ cart, clearCart,addToCartincheckout, addToCart, removeFromCa
     if (subtotal > 0) {
 
       let orderId = Math.floor(Math.random() * Date.now());
-      const data = { email, orderId, cart, subtotal, address, phone, pincode };
+      const data = { name, email, orderId, cart, subtotal, address, phone, pincode };
       const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/initiatetransaction`, {
         method: "POST",
         headers: {
@@ -111,10 +142,10 @@ function Checkout({ cart, clearCart,addToCartincheckout, addToCart, removeFromCa
         }, 2000);
       }
       else {
-        if(order.clearcart==true){
-           clearCart();
+        if (order.clearcart == true) {
+          clearCart();
         }
-        
+
         toast.error(order.error, {
           position: "top-right",
           autoClose: 3000,
@@ -142,7 +173,7 @@ function Checkout({ cart, clearCart,addToCartincheckout, addToCart, removeFromCa
     }
   }
   return (
-    <div className='mx-auto'>
+    <div  className='mx-auto'>
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -155,11 +186,15 @@ function Checkout({ cart, clearCart,addToCartincheckout, addToCart, removeFromCa
         pauseOnHover
         theme="light"
       />
-      {/* <Head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" /></Head> */}
+      <Head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+      <title>Checkout - Techwearonline</title>
+      </Head>
 
       {/* <Script type="application/javascript" src={`${process.env.NEXT_PUBLIC_PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.NEXT_PUBLIC_PAYTM_MID}.js`} crossorigin="anonymous"></Script> */}
+      <div className={` ${isdark? 'bg-darkgreyish':'bg-white'} ${isdark? 'text-white':'text-black'}`}>
 
-      <h1 className='mx-auto text-3xl text-center mt-8 mb-3 font-bold'>Checkout</h1>
+   
+      <h1 style={{fontFamily:'Bitter'}} className={` mx-auto text-3xl text-center pt-8  mb-3 font-bold`}>Checkout</h1>
       <h2 className='leading-7 mx-8 p-2 text-lg'>1. Delivery Details</h2>
       <div className='flex flex-wrap mx-8'>
         <div className="px-2 mb-4 w-[100%] md:w-1/2">
@@ -204,7 +239,7 @@ function Checkout({ cart, clearCart,addToCartincheckout, addToCart, removeFromCa
 
         </div>
       </div>
-      <h2 className='leading-7 mx-8 p-2 text-lg'>2. Review Cart Items & Pay</h2>
+      <h2 className='leading-7 mt-5 mx-8 p-2 text-lg'>2. Review Cart Items & Pay</h2>
       {/* CART */}
       <div className="text-black sidecart  py-5 px-5 pb-7  mx-10 border rounded-lg  bg-metal">
 
@@ -227,12 +262,12 @@ function Checkout({ cart, clearCart,addToCartincheckout, addToCart, removeFromCa
         <p className='font-bold mt-5'>Subtotal: ₹{subtotal} </p>
 
       </div>
-      <div className='flex'>
-        <button disabled={disabled} onClick={initiatetransaction} className="flex disabled:bg-submaincolor text-white bg-maincolor border-0 py-2 px-4 focus:outline-none hover:bg-metal-300 my-5 mx-10 rounded text-base justify-center items-center "><BsBagCheckFill /><span className='mx-1'>Pay ₹{subtotal} </span> </button>
+      <div className='flex pb-9 mt-3'>
+        <button disabled={disabled} onClick={initiatetransaction} className="flex disabled:bg-submaincolor text-white bg-maincolor border-0 py-2 px-4 focus:outline-none hover:bg-metal-300  my-5 mx-10 rounded text-base justify-center items-center "><BsBagCheckFill /><span className='mx-1'>Pay ₹{subtotal} </span> </button>
 
       </div>
     </div>
-
+    </div>
   )
 }
 

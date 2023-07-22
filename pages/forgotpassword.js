@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
+import Head from 'next/head';
 function Forgotpassword() {
   
   useEffect(() => {
@@ -8,9 +9,12 @@ function Forgotpassword() {
     }
    }, [])
   return (
-    <div>
-    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-<div className="sm:mx-auto sm:w-full sm:max-w-sm">
+   
+    <div className="flex min-h-screen  flex-col justify-start px-6 pt-24 lg:px-8">
+       <Head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+      <title>Forgot | Techwearonline</title>
+      </Head>
+<div className="sm:mx-auto  sm:w-full sm:max-w-sm">
   <img className="mx-auto h-32 w-auto" src="/logo1.png" alt="Your Company"/>
   <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Forgot Password</h2>
 </div>
@@ -34,7 +38,7 @@ function Forgotpassword() {
  
 </div>
 </div>
-  </div>
+
   )
 }
 

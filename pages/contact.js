@@ -1,9 +1,5 @@
-import React from 'react'
-
-function Contact() {
-  return (
-    <div>Contact</div>
-  )
+import { Button } from "@material-tailwind/react";
+ 
+export default function Example() {
+  return <Button>Button</Button>;
 }
-
-export default Contact

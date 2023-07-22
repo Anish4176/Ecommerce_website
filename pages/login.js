@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
-
-function Login() {
+import Head from 'next/head';
+function Login({isdark}) {
   const router = new useRouter();
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
@@ -90,16 +90,19 @@ function Login() {
           pauseOnHover
           theme="light"
           />
-      <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+          <Head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+      <title>Login | Techwearonline</title>
+      </Head>
+      <div className={` ${isdark? 'bg-darkgreyish':'bg-white'} ${isdark? 'text-white':'text-black'} flex min-h-full flex-col justify-center px-6 py-12 lg:px-8`} >
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img className="mx-auto h-32 w-auto" src="/logo1.png" alt="Your Company" />
-          <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+          <h2 style={{fontFamily:'Bitter'}} className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight ">Sign in to your account</h2>
         </div>
  
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form onSubmit={handlesubmit} className="space-y-6" action="#" method="POST">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+              <label htmlFor="email" className="block text-sm font-medium leading-6 ">Email address</label>
               <div className="mt-2">
                 <input id="email" name="email" onChange={onchange} value={email} type="email" autoComplete="email" required className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-maincolor sm:text-sm sm:leading-6" placeholder='example@gmail.com' />
               </div>
@@ -107,10 +110,10 @@ function Login() {
 
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
-                <div className="text-sm">
+                <label htmlFor="password" className="block text-sm font-medium leading-6 ">Password</label>
+                {/* <div className="text-sm">
                   <Link href={'/forgotpassword'}>  <div className=" font-semibold text-maincolor hover:text-maincolor">Forgot password?</div></Link>
-                </div>
+                </div> */}
               </div>
               <div className="mt-2">
                 <input id="password" onChange={onchange} value={password} name="password" type="password" autoComplete="current-password" required className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-maincolor sm:text-sm sm:leading-6" />
