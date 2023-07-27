@@ -196,26 +196,26 @@ function Checkout({isdark, cart, clearCart, addToCartincheckout, addToCart, remo
       <div className='flex flex-wrap mx-8'>
         <div className="px-2 mb-4 w-[100%] md:w-1/2">
           <label htmlFor="name" className="leading-7 text-sm text-gray-600">Name</label>
-          <input type="text" onChange={onchange} value={name} id="name" name="name" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+          <input type="text" onChange={onchange} value={name} id="name" name="name" className="w-full  bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-maincolor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
         </div>
         <div className="px-2 mb-4 w-[100%] md:w-1/2">
           <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email (cannot be updated)</label>
-          <input type="email" value={user.email} id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly />
+          <input type="email" value={user.email} id="email" name="email" className="w-full  bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-maincolor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly />
         </div>
       </div>
       <div className="mx-8 px-2 mb-4 ">
         <label htmlFor="email" className="leading-7 text-sm text-gray-600">Address</label>
-        <textarea type="text" onChange={onchange} value={address} name="address" id="address" cols="30" rows="2" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></textarea>
+        <textarea type="text" onChange={onchange} value={address} name="address" id="address" cols="30" rows="2" className="w-full outline-none bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-maincolor text-base  text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></textarea>
       </div>
 
       <div className='flex flex-wrap mx-8'>
         <div className="px-2 mb-4 w-[100%] md:w-1/2">
           <label htmlFor="phone" className="leading-7 text-sm text-gray-600">Phone</label>
-          <input placeholder='Enter your 10 digit phone number' type="text" onChange={onchange} value={phone} id="phone" name="phone" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+          <input placeholder='Enter your 10 digit phone number' type="text" onChange={onchange} value={phone} id="phone" name="phone" className="w-full  bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-maincolor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
         </div>
         <div className="px-2  w-[100%] md:w-1/2 mb-3">
           <label htmlFor="email" className="leading-7 text-sm text-gray-600">Pincode</label>
-          <input placeholder='e.g. 226001' type="text" onChange={onchange} value={pincode} id="pincode" name="pincode" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3  leading-8 transition-colors duration-200 ease-in-out" />
+          <input placeholder='e.g. 226001' type="text" onChange={onchange} value={pincode} id="pincode" name="pincode" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-maincolor text-base outline-none text-gray-700 py-1 px-3  leading-8 transition-colors duration-200 ease-in-out" />
 
         </div>
         <button onClick={handleupdate} className="flex  text-white bg-maincolor border-0 py-2 px-4 focus:outline-none hover:bg-metal-300 mt-2 mb-5 mx-2 rounded text-base justify-center items-center "><span className='mx-1'>Submit </span> </button>
@@ -225,15 +225,15 @@ function Checkout({isdark, cart, clearCart, addToCartincheckout, addToCart, remo
       <div className='flex flex-wrap mx-8'>
         <div className="px-2 mb-4 w-[100%] md:w-1/3">
           <label htmlFor="password" className="leading-7 text-sm text-gray-600">Current Password</label>
-          <input type="password" onChange={onchange} value={password} id="currentpassword" name="password" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+          <input type="password" onChange={onchange} value={password} id="currentpassword" name="password" className="w-full bg-white  rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-maincolor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
         </div>
         <div className="px-2 mb-4 w-[100%] md:w-1/3">
           <label htmlFor="password" className="leading-7 text-sm text-gray-600">New Password</label>
-          <input type="password" onChange={onchange} value={newpassword} id="newpassword" name="newpassword" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+          <input type="password" onChange={onchange} value={newpassword} id="newpassword" name="newpassword" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-maincolor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
         </div>
         <div className="px-2 mb-4 w-[100%] md:w-1/3">
           <label htmlFor="password" className="leading-7 text-sm text-gray-600">Confirm New Password</label>
-          <input type="password" onChange={onchange} value={confirmnewpassword} id="confirmpassword" name="confirmnewpassword" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+          <input type="password" onChange={onchange} value={confirmnewpassword} id="confirmpassword" name="confirmnewpassword" className="w-full bg-white rounded border border-gray-300 focus:border-maincolor focus:ring-2 focus:ring-maincolor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
         </div>
         <button  onClick={handleupdatepassword} className="flex   text-white bg-maincolor border-0 py-2 px-4 focus:outline-none hover:bg-metal-300 mt-2 mb-5 mx-2 rounded text-base justify-center items-center "><span className='mx-1'>Submit </span> </button>
       </div>

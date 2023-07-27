@@ -104,19 +104,19 @@ function Login({isdark}) {
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 ">Email address</label>
               <div className="mt-2">
-                <input id="email" name="email" onChange={onchange} value={email} type="email" autoComplete="email" required className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-maincolor sm:text-sm sm:leading-6" placeholder='example@gmail.com' />
+                <input id="email" name="email" onChange={onchange} value={email} type="email" autoComplete="email" required className="block outline-none px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-maincolor sm:text-sm sm:leading-6" placeholder='example@gmail.com' />
               </div>
             </div>
 
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 ">Password</label>
+                <label htmlFor="password" className="block text-sm font-medium  leading-6 ">Password</label>
                 {/* <div className="text-sm">
                   <Link href={'/forgotpassword'}>  <div className=" font-semibold text-maincolor hover:text-maincolor">Forgot password?</div></Link>
                 </div> */}
               </div>
               <div className="mt-2">
-                <input id="password" onChange={onchange} value={password} name="password" type="password" autoComplete="current-password" required className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-maincolor sm:text-sm sm:leading-6" />
+                <input id="password" onChange={onchange} value={password} name="password" type="password" autoComplete="current-password" required className="block outline-none px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-maincolor sm:text-sm sm:leading-6" />
               </div>
             </div>
 
@@ -126,7 +126,7 @@ function Login({isdark}) {
           </form>
           <p className="mt-10 text-center text-sm text-gray-500">
             Not having account?
-            <Link href={'/signup'}> <span href="#" className="text-lg font-semibold leading-6 mx-2 text-maincolor hover:text-indigo-500">Sign Up</span></Link>
+            <Link href={'/signup'}> <span href="#" className="text-lg font-semibold leading-6 mx-2 text-maincolor ">Sign Up</span></Link>
           </p>
 
 

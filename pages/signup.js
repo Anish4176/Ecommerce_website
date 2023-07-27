@@ -104,13 +104,13 @@ function Signup({isdark}) {
             <div>
               <label htmlFor="name" className="block text-sm font-medium leading-6">Enter Your Name</label>
               <div className="mt-2">
-                <input id="name" value={name} onChange={onchange} name="name" type="text" autoComplete="name" required className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-submaincolor sm:text-sm sm:leading-6" />
+                <input id="name" value={name} onChange={onchange} name="name" type="text" autoComplete="name" required className="block outline-none px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-submaincolor sm:text-sm sm:leading-6" />
               </div>
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 ">Email address</label>
               <div className="mt-2">
-                <input id="email" value={email} onChange={onchange} name="email" type="email" autoComplete="email" required className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-maincolor sm:text-sm sm:leading-6" placeholder='example@gmail.com' />
+                <input id="email" value={email} onChange={onchange} name="email" type="email" autoComplete="email" required className="block outline-none px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-maincolor sm:text-sm sm:leading-6" placeholder='example@gmail.com' />
               </div>
             </div>
 
@@ -120,7 +120,7 @@ function Signup({isdark}) {
 
               </div>
               <div className="mt-2">
-                <input id="password" value={password} onChange={onchange} name="password" type="password" autoComplete="current-password" required className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-maincolor sm:text-sm sm:leading-6" />
+                <input id="password" value={password} onChange={onchange} name="password" type="password" autoComplete="current-password" required className="block outline-none px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-maincolor sm:text-sm sm:leading-6" />
               </div>
             </div>
 
@@ -131,7 +131,7 @@ function Signup({isdark}) {
           </form>
           <p className="mt-10 text-center text-sm text-gray-500">
             Already having account?
-            <Link href={'/login'}> <span href="#" className="text-lg font-semibold leading-6 mx-2 text-maincolor hover:text-indigo-500">Login</span></Link>
+            <Link href={'/login'}> <span href="#" className="text-lg font-semibold leading-6 mx-2 text-maincolor ">Login</span></Link>
           </p>
 
         </div>

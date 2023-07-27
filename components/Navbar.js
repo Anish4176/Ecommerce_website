@@ -61,12 +61,12 @@ function Navbar({isdark,handledark, onClick, sidebar, setsidebar, logout, user, 
           <span className='absolute left-6 -top-1 w-6 h-6 text-base text-white font-serif text-center  border rounded-full  bg-maincolor'>{Object.keys(cart).length} </span>
           </div>
             <div onMouseOver={() => { setdropdown(true) }} onMouseLeave={() => { setdropdown(false) }}>
-              {user.value && <RiAccountCircleFill className='text-4xl cursor-pointer text-maincolor mx-1 md:mx-4 ' />}
-              {dropdown && <div className='absolute right-12  top-8 bg-metal text-maincolor font-bold p-3 rounded-md px-5'>
+              {user.value && <RiAccountCircleFill className='text-4xl cursor-pointer text-maincolor mx-1  md:mx-4 ' />}
+              {dropdown && <div className='absolute right-10  top-8 bg-metal text-black  font-bold p-3 rounded-md px-5'>
                 <ul>
-                  <Link href={'/myaccount'}><li className='my-3 cursor-pointer'>My Account</li></Link>
-                  <Link href={'/orders'}><li className='my-3 cursor-pointer'>My Orders</li></Link>
-                  <a href={'/'}><li onClick={logout} className='my-3 cursor-pointer' >Logout</li></a>
+                  <Link href={'/myaccount'}><li className='my-3 hover:text-maincolor cursor-pointer'>My Account</li></Link>
+                  <Link href={'/orders'}><li className='my-3 hover:text-maincolor cursor-pointer'>My Orders</li></Link>
+                  <a href={'/'}><li onClick={logout} className='my-3 hover:text-maincolor cursor-pointer' >Logout</li></a>
                 </ul>
               </div>}
             </div>
@@ -77,7 +77,7 @@ function Navbar({isdark,handledark, onClick, sidebar, setsidebar, logout, user, 
           </div>
 
 
-          <div style={{ fontFamily: 'Bitter' }} ref={ref} className={`text-black  sidecart fixed z-20  top-0 right-0 p-5 w-full md:w-[50vh] h-[100vh] transform transition-transform ${isdark? 'text-white':'text-black'} ${isdark? 'bg-lightgreyish':'bg-metal'}  ${sidebar ? 'translate-x-0' : 'translate-x-full'} `}>
+          <div style={{ fontFamily: 'Bitter' }} ref={ref} className={`text-black  sidecart fixed z-20  top-0 right-0 p-5 w-[30vh] md:w-[50vh] h-[100vh] transform transition-transform ${isdark? 'text-white':'text-black'} ${isdark? 'bg-lightgreyish':'bg-metal'}  ${sidebar ? 'translate-x-0' : 'translate-x-full'} `}>
             <h1 className='font-bold text-2xl pb-5'>Shopping Cart</h1>
             <div onClick={onClick} className='absolute right-3 top-5 text-3xl cursor-pointer'><AiOutlineCloseCircle /></div>
 

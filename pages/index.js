@@ -7,6 +7,9 @@ import Head from 'next/head';
 import Carousel1 from '@/components/Carousel1'
 const inter = Inter({ subsets: ['latin'] })
 
+
+
+
 export default function Home({isdark}) {
   return (
     <>
@@ -22,6 +25,11 @@ export default function Home({isdark}) {
        
        <Carousel1/>
 
+
+
+
+
+       
 
 
 

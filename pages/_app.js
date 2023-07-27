@@ -4,7 +4,6 @@ import '@/styles/globals.css'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 import LoadingBar from 'react-top-loading-bar'
-import { ThemeProvider } from "@material-tailwind/react";
 import Footer1 from '@/components/Footer1';
 
 export default function App({ Component, pageProps }) {
@@ -121,9 +120,7 @@ export default function App({ Component, pageProps }) {
   }
 
   return <>
-  <ThemeProvider>
 
-  
     <LoadingBar
       color='#7B3DB2'
       height={3}
@@ -134,6 +131,6 @@ export default function App({ Component, pageProps }) {
     <Component isdark={isdark}  sidebar={sidebar} onClick={handlesidecart} cart={cart} addToCartincheckout={addToCartincheckout} addToCart={addToCart} buyCart={buyCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} {...pageProps} />
     <Footer handledark={handledark} isdark={isdark}/>
     <Footer1 handledark={handledark} isdark={isdark} sidebar={sidebar} setsidebar={setsidebar} onClick= {handlesidecart} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal}/>
-    </ThemeProvider>
+   
   </>
 }
