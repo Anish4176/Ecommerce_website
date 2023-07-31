@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-07-02T08:40:52.777Z",
-            "modified": "2023-07-15T13:33:58.948Z",
+            "modified": "2023-07-27T08:52:06.561Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "[{\n\"title\":\"techwearonline-2\",\n\"slug\":\"tech-sqhearefr-oeh4dliSpfDne231\",\n\"desc\":\"req.body[i].title.desc\",\n\"price\":1499,\n\"img\":\"https://rukminim1.flixcart.com/image/416/416/xif0q/mousepad/8/v/a/mouse-pad-motivational-mouse-pade-good-vibe-mouse-pad-for-original-imaghmqqpxmkgcnb.jpeg?q=70\",\n\"size\":\"M\",\n\"color\":\"Red\",\n\"category\":\"tshirts\",\n\"availableQty\":1\n}]",
+                "raw": "[{\n\"title\":\"techwearonline-8\",\n\"slug\":\"tech-sqhewarefcdr-oeh4dleiSdgpfDgnse231\",\n\"desc\":\"req.body[i].title.desc\",\n\"price\":499,\n\"img\":\"https://img.freepik.com/free-photo/portrait-handsome-smiling-stylish-young-man-model-dressed-jeans-clothes-fashion-man_158538-5030.jpg?t=st=1690445600~exp=1690446200~hmac=be47ece7a4603cdb8ea27cde1a4445bdea6d4a90756709a921614d1406ca2f8a\",\n\"size\":\"M\",\n\"color\":\"Red\",\n\"category\":\"tshirts\",\n\"availableQty\":5\n}]",
                 "form": []
             },
             "tests": []

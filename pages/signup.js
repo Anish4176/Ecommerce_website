@@ -27,7 +27,6 @@ function Signup({isdark}) {
     };
     const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, requestOptions);
     const data = await response.json();
-    console.log(data);
     setname('');
     setpassword('');
     setemail('');
@@ -46,7 +45,7 @@ function Signup({isdark}) {
      
       setTimeout(() => {
         router.push( `${process.env.NEXT_PUBLIC_HOST}/login`)
-      }, 3000);
+      }, 1000);
     }
 
     else{

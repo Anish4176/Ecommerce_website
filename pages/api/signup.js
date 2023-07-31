@@ -4,13 +4,13 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const handler = async (req, res) => {
-  
+
     if (req.method === 'POST') {
         let user = await User.findOne({ 'email': req.body.email });
         if (user) {
             res.status(200).json({ success: false, message: 'Email already exists' });
         }
-       
+
         else {
             const hash = bcrypt.hashSync(req.body.password, saltRounds);
             let u = new User({
@@ -19,7 +19,7 @@ const handler = async (req, res) => {
                 password: hash
             })
             await u.save();
-            res.status(200).json({success: true, message: 'Signup successful'});
+            res.status(200).json({ success: true, message: 'Signup successful' });
 
         }
     }

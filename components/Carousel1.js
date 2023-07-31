@@ -14,7 +14,7 @@ export default function Carousel1() {
     router.push('/tshirt')
   }
   return (
-    
+
 
     <div
       id="carouselExampleIndicators"
@@ -23,9 +23,9 @@ export default function Carousel1() {
       data-te-carousel-slide=""
     >
       {/*Carousel indicators*/}
-     
-      <button onClick={handleclick}   className="flex absolute  bottom-5 left-0 right-0 z-[2] mx-[auto] w-32 lg:w-44 rounded-lg  text-black font-bold bg-white border-0 lg:py-2 py-[7px] font-sans focus:outline-none hover:bg-gray-100 my-5 lg:text-2xl   text-lg justify-center items-center ">Shop Now </button>
-    
+
+      <button onClick={handleclick} className="flex absolute  bottom-5 left-0 right-0 z-[2] mx-[auto] w-32 lg:w-44 rounded-lg  text-black font-bold bg-white border-0 lg:py-2 py-[7px] font-sans focus:outline-none hover:bg-gray-100 my-5 lg:text-2xl   text-lg justify-center items-center ">Shop Now </button>
+
       <div
         className="absolute  bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
         data-te-carousel-indicators=""
@@ -64,7 +64,12 @@ export default function Carousel1() {
         >
           <img
             src="/carousel1.webp"
-            className="block object-fit w-full h-[55vh] lg:h-[75vh]"
+            className="md:block hidden  object-fit w-full h-[55vh] lg:h-[75vh]"
+            alt="Wild Landscape"
+          />
+          <img
+            src="/carousel1 copy.jpg"
+            className="block md:hidden object-fit w-full h-[55vh] lg:h-[75vh]"
             alt="Wild Landscape"
           />
         </div>
@@ -75,7 +80,12 @@ export default function Carousel1() {
         >
           <img
             src="/carousel3.webp"
-            className="block object-fit w-full h-[55vh] lg:h-[75vh]"
+            className="md:block hidden object-fit w-full h-[55vh] lg:h-[75vh]"
+            alt="Camera"
+          />
+          <img
+            src="/carousel3 copy.jpg"
+            className="block md:hidden object-fit w-full h-[55vh] lg:h-[75vh]"
             alt="Camera"
           />
         </div>
@@ -86,7 +96,12 @@ export default function Carousel1() {
         >
           <img
             src="/carousel-3.webp"
-            className="block object-fit w-full h-[55vh] lg:h-[75vh]"
+            className="md:block hidden object-fit w-full h-[55vh] lg:h-[75vh]"
+            alt="Exotic Fruits"
+          />
+          <img
+            src="/carousel-3 copy.jpg"
+            className="block md:hidden object-fit w-full h-[55vh] lg:h-[75vh]"
             alt="Exotic Fruits"
           />
         </div>

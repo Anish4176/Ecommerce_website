@@ -37,7 +37,8 @@ function Orders({isdark}) {
             <div className="flex flex-col container mx-auto max-w-screen-lg">
                 <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                        <div className="">
+                    {orders.length==0 && <p>No Order placed yet!</p>}
+                       {orders.length!=0 && <div className="">
                             <table className="min-w-full text-left text-sm font-light">
                                 <thead className="border-b font-medium dark:border-neutral-500">
                                     <tr className='flex justify-between'>
@@ -49,8 +50,9 @@ function Orders({isdark}) {
                                     
                                 </thead>
                                 <tbody>
-                                    {orders.map((element)=>{ return <tr key={element._id}
-                                        className="flex  justify-between border-b transition duration-300 ease-in-out hover:bg-gray-200 dark:border-neutral-500 dark:hover:bg-neutral-200">
+                                    
+                                    { orders.map((element)=>{ return <tr key={element._id}
+                                        className={`flex  justify-between border-b transition ${isdark? 'hover:bg-submaincolor':'hover:bg-gray-200'} duration-300 ease-in-out  dark:border-neutral-500 `}>
                                         <td className="whitespace-nowrap px-6 py-4 font-medium">{element.orderid} </td>
                                         <td className="hidden lg:flex whitespace-nowrap px-6 py-4">{element.email} </td>
                                         {/* <td className="whitespace-nowrap px-6 py-4">{element.amount} </td> */}
@@ -59,7 +61,7 @@ function Orders({isdark}) {
                                    
                                 </tbody>
                             </table>
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </div>

@@ -11,13 +11,12 @@ const handler = async (req, res) => {
         }
         let token = req.body.token;
         let decoded = jwt.verify(token, process.env.JWT_SECRET);
-        console.log('this is decoded' + decoded);
 
         let order = await Order.find({ email: decoded.email });
         res.status(200).json(order);
 
     } catch (err) {
-        res.status(200).json( err)
+        res.status(200).json(err)
     }
 
 }

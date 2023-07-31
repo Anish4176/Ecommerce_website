@@ -15,20 +15,20 @@ export default function App({ Component, pageProps }) {
   const [sidebar, setsidebar] = useState(false);
   const [isdark, setisdark] = useState(false);
 
-  const handlesidecart = () => {   
+  const handlesidecart = () => {
     setsidebar(!sidebar);
   }
 
-  const handledark=() => {
+  const handledark = () => {
     setisdark(!isdark);
   }
 
   useEffect(() => {
     try {
-      router.events.on('routeChangeStart', ()=>{
+      router.events.on('routeChangeStart', () => {
         setProgress(40)
       })
-      router.events.on('routeChangeComplete', ()=>{
+      router.events.on('routeChangeComplete', () => {
         setProgress(100)
       })
       if (localStorage.getItem('cart')) {
@@ -37,7 +37,6 @@ export default function App({ Component, pageProps }) {
       }
     }
     catch (err) {
-      console.log(err);
       localStorage.clear();
     }
     const token = localStorage.getItem('USER');
@@ -82,7 +81,7 @@ export default function App({ Component, pageProps }) {
     }
     setcart(newCart);
     savecart(newCart);
-   
+
   }
   const removeFromCart = (itemcode, qty, price, name, variant, size) => {
     let newCart = { ...cart };
@@ -104,7 +103,7 @@ export default function App({ Component, pageProps }) {
 
   const buyCart = (itemcode, qty, price, name, variant, size) => {
     let newCart = {}
-    newCart[itemcode] = { qty: 1, price, name, variant, size } 
+    newCart[itemcode] = { qty: 1, price, name, variant, size }
     setcart(newCart);
     savecart(newCart);
 
@@ -127,10 +126,10 @@ export default function App({ Component, pageProps }) {
       progress={progress}
       onLoaderFinished={() => setProgress(0)}
     />
-    <Navbar handledark={handledark} isdark={isdark} sidebar={sidebar} setsidebar={setsidebar} onClick= {handlesidecart} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />
-    <Component isdark={isdark}  sidebar={sidebar} onClick={handlesidecart} cart={cart} addToCartincheckout={addToCartincheckout} addToCart={addToCart} buyCart={buyCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} {...pageProps} />
-    <Footer handledark={handledark} isdark={isdark}/>
-    <Footer1 handledark={handledark} isdark={isdark} sidebar={sidebar} setsidebar={setsidebar} onClick= {handlesidecart} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal}/>
-   
+    <Navbar handledark={handledark} isdark={isdark} sidebar={sidebar} setsidebar={setsidebar} onClick={handlesidecart} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />
+    <Component isdark={isdark} sidebar={sidebar} onClick={handlesidecart} cart={cart} addToCartincheckout={addToCartincheckout} addToCart={addToCart} buyCart={buyCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} {...pageProps} />
+    <Footer handledark={handledark} isdark={isdark} />
+    <Footer1 handledark={handledark} isdark={isdark} sidebar={sidebar} setsidebar={setsidebar} onClick={handlesidecart} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />
+
   </>
 }

@@ -36,11 +36,11 @@ const handler = async (req, res) => {
         res.status(200).json({ success: false, error: 'Please enter your 6 digit pincode', clearcart: false })
         return;
     }
-    if(req.body.address.length==0){
+    if (req.body.address.length == 0) {
         res.status(200).json({ success: false, error: 'Please Enter Your address', clearcart: false })
         return;
     }
-    if(req.body.name.length==0){
+    if (req.body.name.length == 0) {
         res.status(200).json({ success: false, error: 'Please Enter Your Name', clearcart: false })
         return;
     }
@@ -49,7 +49,7 @@ const handler = async (req, res) => {
         res.status(200).json({ success: false, error: 'Sorry! We do not deliver to this pincode yet', clearcart: false })
         return;
     }
-    
+
 
     try {
         let orderdetails = new Order({
@@ -68,7 +68,6 @@ const handler = async (req, res) => {
             await Product.findOneAndUpdate({ slug: slug }, { $inc: { 'availableQty': - a.products[slug].qty } })
         }
 
-        console.log('this is a ' + a);
         res.status(200).json({ success: true })
 
 

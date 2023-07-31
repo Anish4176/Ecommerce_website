@@ -10,12 +10,9 @@ const handler = async (req, res) => {
         let token = req.body.token;
         var decoded = jwt.verify(token, process.env.JWT_SECRET);
         let user = await User.findOne({ 'email': decoded.email });
-        console.log('user',user);
-        console.log(req.body.newpassword);
-        console.log(user.password);
+
         if (user) {
-            let compare =await bcrypt.compare(req.body.password, user.password); // true
-            console.log('compare',compare);
+            let compare = await bcrypt.compare(req.body.password, user.password); // true
             if (compare) {
                 const hash = bcrypt.hashSync(req.body.newpassword, saltRounds);
                 user = await User.findOneAndUpdate({ 'email': decoded.email }, { 'password': hash });
