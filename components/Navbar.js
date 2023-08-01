@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import React, { useRef, useState } from 'react'
-import { AiOutlineShoppingCart, AiOutlineCloseCircle, AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/Ai';
-import { BsBagCheckFill } from 'react-icons/Bs';
-import { RiAccountCircleFill, RiMoonClearFill } from 'react-icons/Ri';
-import { RxHamburgerMenu } from 'react-icons/Rx';
-import { ImCross } from 'react-icons/Im';
+import { AiOutlineShoppingCart, AiOutlineCloseCircle, AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
+import { BsBagCheckFill } from 'react-icons/bs';
+import { RiAccountCircleFill, RiMoonClearFill } from 'react-icons/ri';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { ImCross } from 'react-icons/im';
 import { useRouter } from 'next/router';
 function Navbar({ isdark, handledark, onClick, sidebar, setsidebar, logout, user, cart, addToCart, removeFromCart, clearCart, subtotal }) {
   const [dropdown, setdropdown] = useState(false);

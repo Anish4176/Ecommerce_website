@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from 'next/link';
 import { useRef, useState } from 'react'
-import { AiOutlineShoppingCart, AiOutlineCloseCircle, AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/Ai';
-import { BsBagCheckFill } from 'react-icons/Bs';
-import { RiAccountCircleFill, RiMoonClearFill } from 'react-icons/Ri';
+import { AiOutlineShoppingCart, AiOutlineCloseCircle, AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
+import { BsBagCheckFill } from 'react-icons/bs';
+import { RiAccountCircleFill, RiMoonClearFill } from 'react-icons/ri';
 import { useRouter } from 'next/router';
-import { AiFillHome } from 'react-icons/Ai';
+import { AiFillHome } from 'react-icons/ai';
 
 
 function Footer1({ isdark, handledark, onClick, sidebar, setsidebar, logout, user, cart, addToCart, removeFromCart, clearCart, subtotal }) {

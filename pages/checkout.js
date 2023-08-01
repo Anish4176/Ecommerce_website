@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link';
-import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/Ai';
-import { BsBagCheckFill } from 'react-icons/Bs';
+import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
+import { BsBagCheckFill } from 'react-icons/bs';
 import Head from 'next/head';
 import Script from 'next/script';
 import { ToastContainer, toast } from 'react-toastify';
