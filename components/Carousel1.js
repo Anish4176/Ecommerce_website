@@ -68,7 +68,7 @@ export default function Carousel1() {
             alt="Wild Landscape"
           />
           <img
-            src="/carousel1 copy.jpg"
+            src="/carousel5.webp"
             className="block md:hidden object-fit w-full h-[55vh] lg:h-[75vh]"
             alt="Wild Landscape"
           />
@@ -84,7 +84,7 @@ export default function Carousel1() {
             alt="Camera"
           />
           <img
-            src="/carousel3 copy.jpg"
+            src="/carousel6.webp"
             className="block md:hidden object-fit w-full h-[55vh] lg:h-[75vh]"
             alt="Camera"
           />
@@ -100,7 +100,7 @@ export default function Carousel1() {
             alt="Exotic Fruits"
           />
           <img
-            src="/carousel-3 copy.jpg"
+            src="/carousel4.webp"
             className="block md:hidden object-fit w-full h-[55vh] lg:h-[75vh]"
             alt="Exotic Fruits"
           />
