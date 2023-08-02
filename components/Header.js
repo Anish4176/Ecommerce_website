@@ -17,8 +17,8 @@ function Header() {
                 <div className="rounded-lg shadow-md overflow-hidden transition hover:scale-105 hover:duration-300">
                   <Link href="/tshirt" className="">
                     <Image
-                      className="h-[27rem] rounded-lg transition hover:duration-300 hover:scale-110"
-                      src="/IMG1.avif"
+                      className="h-[26rem] rounded-lg transition hover:duration-300 hover:scale-110"
+                      src="/IMG2.avif"
                       alt="wrappixel kit"
                       width={450}
                       height={1000}
@@ -37,7 +37,7 @@ function Header() {
                 <div className="rounded-lg shadow-md overflow-hidden transition hover:scale-105 hover:duration-300">
                   <Link href="/hoodies" className="">
                     <Image
-                      className="h-[27rem] rounded-lg transition hover:duration-300 hover:scale-110"
+                      className="h-[26rem] rounded-lg transition hover:duration-300 hover:scale-110"
                       src="/IMG8.avif"
                       alt="wrappixel kit"
                       width={450}
@@ -57,7 +57,7 @@ function Header() {
                 <div className="rounded-lg shadow-md overflow-hidden transition hover:scale-105 hover:duration-300">
                   <Link href="/mugs" className="">
                     <Image
-                      className="h-[27rem] rounded-lg transition hover:duration-300 hover:scale-110"
+                      className="h-[26rem] rounded-lg transition hover:duration-300 hover:scale-110"
                       src="/IMG3.avif"
                       alt="wrappixel kit"
                       width={450}
@@ -76,7 +76,7 @@ function Header() {
                 <div className="rounded-lg shadow-md overflow-hidden transition hover:scale-105 hover:duration-300">
                   <Link href="/caps" className="">
                     <Image
-                      className="h-[27rem] rounded-lg transition hover:duration-300 hover:scale-110"
+                      className="h-[26rem] rounded-lg transition hover:duration-300 hover:scale-110"
                       src="/IMG4.avif"
                       alt="wrappixel kit"
                       width={450}
@@ -95,7 +95,7 @@ function Header() {
                 <div className="rounded-lg shadow-md overflow-hidden transition hover:scale-105 hover:duration-300">
                   <Link href="/sweatshirts" className="">
                     <Image
-                      className="h-[27rem] rounded-lg transition hover:duration-300 hover:scale-110"
+                      className="h-[26rem] rounded-lg transition hover:duration-300 hover:scale-110"
                       src="/IMG55.avif"
                       alt="wrappixel kit"
                       width={450}
@@ -114,7 +114,7 @@ function Header() {
                 <div className="rounded-lg shadow-md overflow-hidden transition hover:scale-105 hover:duration-300">
                   <Link href="/mousepad" className="">
                     <Image
-                      className="h-[27rem] rounded-lg transition hover:duration-300 hover:scale-110"
+                      className="h-[26rem] rounded-lg transition hover:duration-300 hover:scale-110"
                       src="/IMG6.avif"
                       alt="wrappixel kit"
                       width={450}
