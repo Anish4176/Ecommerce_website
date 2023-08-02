@@ -72,18 +72,18 @@ function Navbar({ isdark, handledark, onClick, sidebar, setsidebar, logout, user
             {Object.keys(cart).length == 0 &&
               <div className='my-4'>Your cart is Empty!</div>
             }
-            <ol className='flex-col justify-center items-center'>
+            <ul className='flex-col justify-center items-center'>
               {Object.keys(cart).map((k) => {
                 return <li key={k}>
                   <div className='flex space-x-5 my-3'>
 
-                    <div className='w-2/3 text-base font-bold'>{cart[k].name} ({cart[k].variant} / {cart[k].size}) </div>
+                    <div className='w-2/3 text-sm font-bold'>{cart[k].name} ({cart[k].variant} / {cart[k].size}) </div>
                     <div className={`w-1/3 flex justify-center items-center ${isdark ? 'text-white' : 'text-maincolor'}  text-xl cursor-pointer`}><AiFillMinusCircle onClick={() => { removeFromCart(k, 1, cart[k].price, cart[k].name, cart[k].variant, cart[k].size) }} /> <span className='mx-2'>{cart[k].qty}</span > <AiFillPlusCircle onClick={() => { addToCart(k, 1, cart[k].price, cart[k].name, cart[k].variant, cart[k].size) }} /></div>
                   </div>
 
                 </li>
               })}
-            </ol>
+            </ul>
             <p className='font-bold mt-5'>Subtotal: ₹{subtotal} </p>
             <div className='flex'>
               <button onClick={handleCheckout} disabled={Object.keys(cart).length == 0} className="flex disabled:bg-submaincolor  text-white bg-maincolor border-0 py-2 px-4 focus:outline-none hover:bg-metal-300 my-5 mx-0 rounded text-base justify-center items-center "><BsBagCheckFill /><span className='mx-1'>Checkout</span> </button>

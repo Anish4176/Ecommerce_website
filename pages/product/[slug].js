@@ -133,9 +133,9 @@ function Slug({ isdark, addToCart, product, variants, buyCart, error }) {
 
               <div className="flex items-center">
                 {product.availableQty > 0 && <span className={`${isdark ? 'text-white' : 'text-gray-900'} title-font font-medium text-2xl text-gray-900`}>₹{product.price}</span>}
-                {product.availableQty <= 0 && <span className="title-font font-medium text-red-500 text-xl  md:text-2xl ">Out of Stock!</span>}
+                {product.availableQty <= 0 && <span className="title-font font-normal text-red-500 text-xl  md:text-2xl ">Out of Stock!</span>}
 
-                <button disabled={product.availableQty <= 0} onClick={() => { buyCart(slug, 1, product.price, product.title, product.color, product.size) }} className="  flex disabled:bg-submaincolor ml-5   md:ml-8 text-white bg-maincolor border-0 py-2 px-3 md:px-6 focus:outline-none hover:bg-maincolor rounded">Buy Now</button>
+                <button disabled={product.availableQty <= 0} onClick={() => { buyCart(slug, 1, product.price, product.title, product.color, product.size) }} className="  flex disabled:bg-submaincolor ml-3   md:ml-8 text-white bg-maincolor border-0 py-2 px-3 md:px-6 focus:outline-none hover:bg-maincolor rounded">Buy Now</button>
 
                 <button disabled={product.availableQty <= 0} onClick={() => { addToCart(slug, 1, product.price, product.title, product.color, product.size) }} className="flex ml-3 disabled:bg-submaincolor text-white bg-maincolor border-0 py-2 px-3 md:px-6 focus:outline-none hover:bg-maincolor rounded">Add to Cart</button>
               </div>

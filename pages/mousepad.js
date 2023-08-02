@@ -27,7 +27,7 @@ if(mousepad == null){
                 <div className={`p-2 transition hover:scale-105 hover:duration-300 mx-auto rounded-lg ${isdark? 'bg-lightgreyish':'bg-white'} lg:mx-3 cursor-pointer shadow-lg m-2`}>
                   <div className="block relative 
                rounded overflow-hidden">
-                    <img alt="ecommerce" className="m-auto h-[40vh] w-[40vh] block" src={mousepad[element].img} />
+                    <img alt="ecommerce" className="m-auto h-[40vh] w-[40vh] block rounded" src={mousepad[element].img} />
                   </div>
                   <div className="mt-4 mx-2">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{mousepad[element].category}</h3>

@@ -266,17 +266,17 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
             {Object.keys(cart).length == 0 &&
               <div className='my-4'>Your cart is Empty!</div>
             }
-            <ol className='flex-col justify-center items-center '>
+            <ul className='flex-col justify-center items-center '>
               {Object.keys(cart).map((k) => {
                 return <li key={k}>
                   <div className='flex space-x-5 my-3'>
-                    <div className='w-2/3 md:text-xl text-lg font-medium'>{cart[k].name} ({cart[k].variant} / {cart[k].size})</div>
+                    <div className='w-2/3 md:text-xl text-sm text-gray-500 font-semibold'>{cart[k].name} ({cart[k].variant} / {cart[k].size})</div>
                     <div className='w-1/3 flex justify-end items-center text-maincolor text-xl cursor-pointer'><AiFillMinusCircle onClick={() => { removeFromCart(k, 1, cart[k].price, cart[k].name, cart[k].variant, cart[k].size) }} /> <span className='mx-2'>{cart[k].qty}</span > <AiFillPlusCircle onClick={() => { addToCartincheckout(k, 1, cart[k].price, cart[k].name, cart[k].variant, cart[k].size) }} /></div>
                   </div>
 
                 </li>
               })}
-            </ol>
+            </ul>
             <p className='font-bold mt-5'>Subtotal: ₹{subtotal} </p>
 
           </div>

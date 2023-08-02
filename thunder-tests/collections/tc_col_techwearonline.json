@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-07-02T08:40:52.777Z",
-            "modified": "2023-08-02T04:31:27.739Z",
+            "modified": "2023-08-02T14:06:24.639Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "[{\n\"title\":\"techwearonline-8\",\n\"slug\":\"tech-sqhewardefcdr-oeh4dleiSdgpfDgnse231\",\n\"desc\":\"req.body[i].title.desc\",\n\"price\":499,\n\"img\":\"https://img.freepik.com/free-photo/portrait-handsome-smiling-stylish-young-man-model-dressed-jeans-clothes-fashion-man_158538-5030.jpg?t=st=1690445600~exp=1690446200~hmac=be47ece7a4603cdb8ea27cde1a4445bdea6d4a90756709a921614d1406ca2f8a\",\n\"size\":\"M\",\n\"color\":\"Red\",\n\"category\":\"hoodies\",\n\"availableQty\":5\n}]",
+                "raw": "[{\n\"title\":\"Cooler Master MP511 Gaming Mouse Pad\",\n\"slug\":\"daakghkkFjgsgms;llbjkdfvhghvjlg\",\n\"desc\":\"The MP511 Mouse Pad is an upgrade in every sense of the word, featuring legendary CORDURA® fabric for improved durability, flawless splash resistance, and smooth performance for generations of battles to come.\",\n\"price\":249,\n\"img\":\"https://www.primeabgb.com/wp-content/uploads/2021/08/Cooler-Master-MP511-Gaming-Mouse-Pad-Large-MP-511-CBLC1.jpg\",\n\"size\":\"S\",\n\"color\":\"Black\",\n\"category\":\"mousepads\",\n\"availableQty\":100\n}]",
                 "form": []
             },
             "tests": []
@@ -29,11 +29,11 @@
             "colId": "5e3aa0df-3e8c-4376-b540-07e4e0951ddf",
             "containerId": "",
             "name": "getproducts",
-            "url": "http://localhost:3000/api/getproducts",
+            "url": "https://ecommerce-website-anwklh82q-anish4176.vercel.app/api/getproducts",
             "method": "GET",
             "sortNum": 20000,
             "created": "2023-07-02T09:04:22.556Z",
-            "modified": "2023-07-02T09:04:32.407Z",
+            "modified": "2023-08-02T10:49:46.419Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -43,16 +43,16 @@
             "colId": "5e3aa0df-3e8c-4376-b540-07e4e0951ddf",
             "containerId": "",
             "name": "updateproducts",
-            "url": "http://localhost:3000/api/updateproducts",
+            "url": "https://ecommerce-website-anwklh82q-anish4176.vercel.app/api/updateproducts",
             "method": "POST",
             "sortNum": 30000,
             "created": "2023-07-02T09:04:57.025Z",
-            "modified": "2023-07-02T09:12:38.521Z",
+            "modified": "2023-08-02T10:52:58.035Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": " [\r\n    {\r\n      \"_id\": \"64a13c5e58f860cec4893848\",\r\n      \"title\": \"techwearonline\",\r\n      \"slug\": \"tech-wear-online3\",\r\n      \"desc\": \"req.body[i].title.desc\",\r\n      \"price\": 499,\r\n      \"img\": \"req.body[i].title.img\",\r\n      \"size\": \"XL\",\r\n      \"color\": \"Red\",\r\n      \"category\": \"tshirts\",\r\n      \"availableQty\": 1,\r\n      \"createdAt\": \"2023-07-02T08:59:10.237Z\",\r\n      \"updatedAt\": \"2023-07-02T08:59:10.237Z\",\r\n      \"__v\": 0\r\n    },\r\n    {\r\n      \"_id\": \"64a13c5e58f860cec489384b\",\r\n      \"title\": \"techwearonline\",\r\n      \"slug\": \"tech-wear-online4\",\r\n      \"desc\": \"req.body[i].title.desc\",\r\n      \"price\": 499,\r\n      \"img\": \"req.body[i].title.img\",\r\n      \"size\": \"XL\",\r\n      \"color\": \"Red\",\r\n      \"category\": \"tshirts\",\r\n      \"availableQty\": 1,\r\n      \"createdAt\": \"2023-07-02T08:59:10.250Z\",\r\n      \"updatedAt\": \"2023-07-02T08:59:10.250Z\",\r\n      \"__v\": 0\r\n    }\r\n  ]\r\n",
+                "raw": " [\n    {\n      \"_id\": \"64c9d8bf46350dcb26117acb\",\n      \"title\": \"Jacquard Cotton Regular Fit Mens T-Shirt\",\n      \"slug\": \"tech-sqhewarefcdr-oeh4dleiSdgpfDgnse231\",\n      \"desc\": \"Elevate your everyday fit with this stylish Stop jacquard cotton half-sleeved regular-fit men's t-shirt. The cotton fabric makes you comfortable, and the vibrant hue makes you look as well as feel good at the same time.\",\n      \"price\": 499,\n      \"img\": \"https://sslimages.shoppersstop.com/sys-master/images/h54/h4c/28458425745438/A22STJQPL08CTBK_BLACK.jpg_230Wx334H\",\n      \"size\": \"XL\",\n      \"color\": \"Black\",\n      \"category\": \"tshirts\",\n      \"availableQty\": 100,\n      \"createdAt\": \"2023-07-02T08:59:10.237Z\",\n      \"updatedAt\": \"2023-07-02T08:59:10.237Z\",\n      \"__v\": 0\n    }\n   \n  ]\n",
                 "form": []
             },
             "tests": []
