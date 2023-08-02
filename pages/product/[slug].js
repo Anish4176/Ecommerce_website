@@ -4,7 +4,9 @@ import mongoose from 'mongoose';
 import Product from '@/model/Product';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Error from 'next/error'
+import Error from 'next/error';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 function Slug({ isdark, addToCart, product, variants, buyCart, error }) {
   if (error == 404) {
@@ -15,11 +17,13 @@ function Slug({ isdark, addToCart, product, variants, buyCart, error }) {
 
   const [service, setservice] = useState(null)
   const [pin, setpin] = useState(null);
+  const [open, setOpen] = React.useState(false);
 
   const handlepincheck = async () => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
+    setOpen(true);
     const checkpin = await response.json();
-
+    setOpen(true);
     for (let i in checkpin) {
       if (pin === i) {
         setservice(true);
@@ -80,11 +84,18 @@ function Slug({ isdark, addToCart, product, variants, buyCart, error }) {
         pauseOnHover
         theme="light"
       />
+      <Backdrop
+        sx={{ backgroundColor: '#FFFFFF', color: '#783AB1', zIndex: (theme) => theme.zIndex.drawer + 1}}
+        open={open}
+        
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <section className={`${isdark ? 'bg-darkgreyish' : 'bg-white'} text-gray-600 body-font overflow-hidden`}>
         <div className="mx-auto w-[100%]  py-8 ">
           <div className=" mx-auto flex justify-center flex-wrap">
             <img alt="ecommerce" className="lg:w-[65vh]   w-[80%] md:w-[60%] lg:h-[80vh] h-[50vh]  object-top rounded" src={product.img} />
-            <div className="lg:w-1/2 mx-4 md:mx-10  lg:py-3 mt-6 lg:mt-0">
+            <div className="lg:w-1/2 pl-[1.3rem] md:mx-10  lg:py-3 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">TechWearOnline</h2>
               <h1 className={`${isdark ? 'text-white' : 'text-gray-900'} font-bold text-2xl md:text-4xl  text-black mb-1`}>{product.title} ({product.size} / {product.color}) </h1>
               <h2 className="text-md title-font mt-3 font-bold text-gray-900 tracking-widest">Product Description :</h2>

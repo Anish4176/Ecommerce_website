@@ -14,7 +14,7 @@ function Hood({ hood, isdark }) {
       <section className={`min-h-screen overflow-hidden ${isdark ? 'text-white' : 'text-gray-900'}  ${isdark ? 'bg-darkgreyish' : 'bg-white'}  body-font`}>
         <h1 className='text-center text-4xl pt-12 font-medium  '>Explore Our Hoodies Collection</h1>
         <hr className='w-1/3 font-semibold my-1 mx-auto' />
-        <p className=' text-sm text-start  container mx-auto mt-4 px-3 md:px-24 lg:px-32 '>Stay warm and stylish with the wide selection of hoodies available at Techwearonline.com. Our hoodies are perfect for every occasion, whether you're looking for a casual everyday hoodie or something to wear to the gym. We have a variety of styles to choose from, including coding hoodies, anime hoodies, and casual hoodies for everyday wear. All of our hoodies are made with high-quality materials and are designed to be comfortable and durable. Shop now and find the perfect hoodie for you!</p>
+        <p className=' text-sm text-start  container mx-auto mt-4 px-3 md:px-24 lg:px-32 '>Stay warm and stylish with the wide selection of hoodies available at Techwearonline.com. Our hoodies are perfect for every occasion, whether you're looking for a casual everyday hoodie or something to wear to the gym. We have a variety of styles to choose from, including coding hoodies, anime hoodies, and casual hoodies for everyday wear.</p>
         <div className="container px-3 py-12 mx-auto">
           <div className="flex justify-center flex-wrap -m-4 ">
 

@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import '@/styles/globals.css'
@@ -5,6 +6,10 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 import LoadingBar from 'react-top-loading-bar'
 import Footer1 from '@/components/Footer1';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+
+
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -14,6 +19,8 @@ export default function App({ Component, pageProps }) {
   const [progress, setProgress] = useState(0)
   const [sidebar, setsidebar] = useState(false);
   const [isdark, setisdark] = useState(false);
+  const [open, setOpen] = React.useState(false);
+
 
   const handlesidecart = () => {
     setsidebar(!sidebar);
@@ -23,13 +30,16 @@ export default function App({ Component, pageProps }) {
     setisdark(!isdark);
   }
 
+
   useEffect(() => {
     try {
       router.events.on('routeChangeStart', () => {
-        setProgress(40)
+        setProgress(40);
+        setOpen(true);
       })
       router.events.on('routeChangeComplete', () => {
-        setProgress(100)
+        setProgress(100);
+        setOpen(false);
       })
       if (localStorage.getItem('cart')) {
         setcart(JSON.parse(localStorage.getItem('cart')))
@@ -127,6 +137,13 @@ export default function App({ Component, pageProps }) {
       onLoaderFinished={() => setProgress(0)}
     />
     <Navbar handledark={handledark} isdark={isdark} sidebar={sidebar} setsidebar={setsidebar} onClick={handlesidecart} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />
+    <Backdrop
+      sx={{ backgroundColor: '#FFFFFF', marginTop: '5rem', color: '#783AB1', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open={open}
+
+    >
+      <CircularProgress color="inherit" />
+    </Backdrop>
     <Component isdark={isdark} sidebar={sidebar} onClick={handlesidecart} cart={cart} addToCartincheckout={addToCartincheckout} addToCart={addToCart} buyCart={buyCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} {...pageProps} />
     <Footer handledark={handledark} isdark={isdark} />
     <Footer1 handledark={handledark} isdark={isdark} sidebar={sidebar} setsidebar={setsidebar} onClick={handlesidecart} logout={logout} user={user} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />

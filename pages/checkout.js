@@ -7,6 +7,8 @@ import Script from 'next/script';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, removeFromCart, subtotal }) {
@@ -21,6 +23,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
   const [pincode, setpincode] = useState('')
   const [user, setuser] = useState({ value: null })
   const [service, setservice] = useState(null)
+  const [open, setOpen] = React.useState(false);
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('USER'));
 
@@ -49,7 +52,9 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
       },
       body: JSON.stringify(data),
     });
+    setOpen(true);
     let res = await response.json();
+    setOpen(true);
     setname(res.name);
     setaddress(res.address);
     setphone(res.phone);
@@ -60,7 +65,9 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
   const getpincode = async (pin) => {
     setpincode(pin)
     const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
+    setOpen(true);
     const checkpin = await response.json();
+    setOpen(false);
     pin = pin.trim();
     if (Object.keys(checkpin).includes(pin)) {
       setservice(true);
@@ -125,7 +132,9 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
         },
         body: JSON.stringify(data),
       });
+      setOpen(true);
       let order = await response.json();
+      setOpen(false);
       if (order.success) {
         toast.success('Order Placed Successfully', {
           position: "top-right",
@@ -188,6 +197,13 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
         pauseOnHover
         theme="light"
       />
+      <Backdrop
+        sx={{ backgroundColor: '#FFFFFF',marginTop:'5rem', color: '#783AB1', zIndex: (theme) => theme.zIndex.drawer + 1}}
+        open={open}
+        
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <Head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
         <title>Checkout - Techwearonline</title>
       </Head>

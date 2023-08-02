@@ -4,11 +4,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+
 function Login({ isdark }) {
   const router = new useRouter();
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
-
+  const [open, setOpen] = React.useState(false);
+  
   useEffect(() => {
     if (localStorage.getItem('USER')) {
       router.push('/');
@@ -24,8 +28,10 @@ function Login({ isdark }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email, password: password })
     };
-    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}api/login`, requestOptions);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, requestOptions);
+    setOpen(true);
     const data = await response.json();
+    setOpen(false);
 
     setpassword('');
     setemail('');
@@ -88,6 +94,13 @@ function Login({ isdark }) {
         pauseOnHover
         theme="light"
       />
+       <Backdrop
+        sx={{ backgroundColor: '#FFFFFF',marginTop:'5rem', color: '#783AB1', zIndex: (theme) => theme.zIndex.drawer + 1}}
+        open={open}
+        
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <Head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
         <title>Login | Techwearonline</title>
       </Head>

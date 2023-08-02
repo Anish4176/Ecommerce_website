@@ -17,7 +17,7 @@ function Sweatshirts({ sweatshirt, isdark }) {
       <section className={`min-h-screen overflow-hidden ${isdark ? 'text-white' : 'text-gray-900'}  ${isdark ? 'bg-darkgreyish' : 'bg-white'}  body-font`}>
         <h1 className='text-center text-3xl  md:text-4xl pt-12 font-medium  '>Explore Our Sweatshirts Collection</h1>
         <hr className='w-1/3 font-semibold my-1 mx-auto' />
-        <p className=' text-sm text-start  container mx-auto mt-4 px-3 md:px-24 lg:px-32 '>Stay comfortable and stylish with the wide selection of sweatshirts available at Techwearonline.com. Our sweatshirts are perfect for every occasion, whether you're looking for a casual everyday sweatshirt or something to wear to the gym. We have a variety of styles to choose from, including coding sweatshirts, anime sweatshirts, and casual sweatshirts for everyday wear. All of our sweatshirts are made with high-quality materials and are designed to be comfortable and durable. Shop now and find the perfect sweatshirt for you!</p>
+        <p className=' text-sm text-start  container mx-auto mt-4 px-3 md:px-24 lg:px-32 '>Stay comfortable and stylish with the wide selection of sweatshirts available at Techwearonline.com. Our sweatshirts are perfect for every occasion, whether you're looking for a casual everyday sweatshirt or something to wear to the gym. All of our sweatshirts are made with high-quality materials and are designed to be comfortable and durable. Shop now and find the perfect sweatshirt for you!</p>
         <div className="container px-3 py-12 mx-auto">
           <div className="flex justify-center flex-wrap -m-4 ">
 

@@ -15,7 +15,7 @@ if(mousepad == null){
       <title>Mousepad | Techwearonline</title>
       </Head>
       <section className={`min-h-screen overflow-hidden ${isdark ? 'text-white' : 'text-gray-900'}  ${isdark? 'bg-darkgreyish':'bg-white'}  body-font`}>
-      <h1 className='text-center text-4xl pt-11 font-medium '>Explore Our Mousepads Collection</h1>
+      <h1 className='text-center text-3xl pt-11 font-medium '>Explore Our Mousepads Collection</h1>
         <hr className='w-1/3 font-semibold my-1 mx-auto' />
         <p className=' text-sm text-start  container mx-auto mt-4 px-3 md:px-24 lg:px-32'>Enhance your computer setup with the high-quality mousepads available at Techwearonline.com. Our mousepads are perfect for every interest, including coding mousepads, anime mousepads, and casual mousepads for everyday use. All of our mousepads are made with durable materials and are designed to provide a smooth and comfortable surface for your mouse. Shop now and find the perfect mousepad for you!</p>
         <div className="container px-3 py-12 mx-auto">

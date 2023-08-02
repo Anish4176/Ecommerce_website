@@ -4,29 +4,35 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-function Signup({isdark}) {
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+
+function Signup({ isdark }) {
   const router = new useRouter();
   const [name, setname] = useState('')
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
-
+  const [isdark, setisdark] = useState(false);
+  const [open, setOpen] = React.useState(false);
   useEffect(() => {
-    if (localStorage.getItem('USER')){
+    if (localStorage.getItem('USER')) {
       router.push('/');
     }
-   }, [])
+  }, [])
 
   const handlesubmit = async (e) => {
     e.preventDefault();
     // POST request using fetch with async/await
 
-    const requestOptions = {        
+    const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: name, email: email, password: password })
     };
     const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, requestOptions);
+    setOpen(true);
     const data = await response.json();
+    setOpen(false);
     setname('');
     setpassword('');
     setemail('');
@@ -42,13 +48,13 @@ function Signup({isdark}) {
         progress: undefined,
         theme: "light",
       });
-     
+
       setTimeout(() => {
-        router.push( `${process.env.NEXT_PUBLIC_HOST}/login`)
+        router.push(`${process.env.NEXT_PUBLIC_HOST}/login`)
       }, 1000);
     }
 
-    else{
+    else {
       toast.error(data.message, {
         position: "top-right",
         autoClose: 3000,
@@ -89,13 +95,20 @@ function Signup({isdark}) {
         pauseOnHover
         theme="light"
       />
+      <Backdrop
+        sx={{ backgroundColor: '#FFFFFF', marginTop: '5rem', color: '#783AB1', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <Head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
-      <title>Signup | Techwearonline</title>
+        <title>Signup | Techwearonline</title>
       </Head>
-      <div className={` ${isdark? 'bg-darkgreyish':'bg-white'} ${isdark? 'text-white':'text-black'} flex min-h-full flex-col justify-center px-6 py-12 lg:px-8`}>
+      <div className={` ${isdark ? 'bg-darkgreyish' : 'bg-white'} ${isdark ? 'text-white' : 'text-black'} flex min-h-full flex-col justify-center px-6 py-12 lg:px-8`}>
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img className="mx-auto h-32 w-auto" src="/logo1.png" alt="Your Company" />
-          <h2 style={{fontFamily:'Bitter'}} className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight ">Sign up for an account</h2>
+          <h2 style={{ fontFamily: 'Bitter' }} className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight ">Sign up for an account</h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -125,7 +138,7 @@ function Signup({isdark}) {
 
             <div >
               <button type="submit" className="flex mt-5 w-full justify-center rounded-md bg-maincolor px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-maincolor focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-maincolor">Sign Up</button>
-             
+
             </div>
           </form>
           <p className="mt-10 text-center text-sm text-gray-500">
