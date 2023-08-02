@@ -10,16 +10,16 @@
             "colId": "5e3aa0df-3e8c-4376-b540-07e4e0951ddf",
             "containerId": "",
             "name": "addproducts",
-            "url": "http://localhost:3000/api/addproducts",
+            "url": "https://ecommerce-website-anwklh82q-anish4176.vercel.app//api/addproducts",
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-07-02T08:40:52.777Z",
-            "modified": "2023-07-27T08:52:06.561Z",
+            "modified": "2023-08-02T04:31:27.739Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "[{\n\"title\":\"techwearonline-8\",\n\"slug\":\"tech-sqhewarefcdr-oeh4dleiSdgpfDgnse231\",\n\"desc\":\"req.body[i].title.desc\",\n\"price\":499,\n\"img\":\"https://img.freepik.com/free-photo/portrait-handsome-smiling-stylish-young-man-model-dressed-jeans-clothes-fashion-man_158538-5030.jpg?t=st=1690445600~exp=1690446200~hmac=be47ece7a4603cdb8ea27cde1a4445bdea6d4a90756709a921614d1406ca2f8a\",\n\"size\":\"M\",\n\"color\":\"Red\",\n\"category\":\"tshirts\",\n\"availableQty\":5\n}]",
+                "raw": "[{\n\"title\":\"techwearonline-8\",\n\"slug\":\"tech-sqhewardefcdr-oeh4dleiSdgpfDgnse231\",\n\"desc\":\"req.body[i].title.desc\",\n\"price\":499,\n\"img\":\"https://img.freepik.com/free-photo/portrait-handsome-smiling-stylish-young-man-model-dressed-jeans-clothes-fashion-man_158538-5030.jpg?t=st=1690445600~exp=1690446200~hmac=be47ece7a4603cdb8ea27cde1a4445bdea6d4a90756709a921614d1406ca2f8a\",\n\"size\":\"M\",\n\"color\":\"Red\",\n\"category\":\"hoodies\",\n\"availableQty\":5\n}]",
                 "form": []
             },
             "tests": []
@@ -62,11 +62,11 @@
             "colId": "5e3aa0df-3e8c-4376-b540-07e4e0951ddf",
             "containerId": "",
             "name": "adduser",
-            "url": "http://localhost:3000/api/signup",
+            "url": "https://ecommerce-website-anwklh82q-anish4176.vercel.app/api/signup",
             "method": "POST",
             "sortNum": 40000,
             "created": "2023-07-04T06:02:12.857Z",
-            "modified": "2023-07-04T06:11:41.988Z",
+            "modified": "2023-08-02T04:34:55.212Z",
             "headers": [],
             "params": [],
             "body": {

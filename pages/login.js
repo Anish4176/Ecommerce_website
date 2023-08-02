@@ -24,7 +24,7 @@ function Login({ isdark }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email, password: password })
     };
-    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, requestOptions);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}api/login`, requestOptions);
     const data = await response.json();
 
     setpassword('');
