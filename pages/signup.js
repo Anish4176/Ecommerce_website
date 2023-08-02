@@ -12,7 +12,6 @@ function Signup({ isdark }) {
   const [name, setname] = useState('')
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
-  const [isdark, setisdark] = useState(false);
   const [open, setOpen] = React.useState(false);
   useEffect(() => {
     if (localStorage.getItem('USER')) {
