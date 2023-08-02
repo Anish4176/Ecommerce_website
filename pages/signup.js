@@ -108,6 +108,10 @@ function Signup({ isdark }) {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img className="mx-auto h-32 w-auto" src="/logo1.png" alt="Your Company" />
           <h2 style={{ fontFamily: 'Bitter' }} className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight ">Sign up for an account</h2>
+          <p className="mt-10 text-center text-sm text-gray-500">
+            Already having account?
+            <Link href={'/login'}> <span href="#" className="text-lg font-semibold leading-6 mx-2 text-maincolor ">Login</span></Link>
+          </p>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -140,10 +144,7 @@ function Signup({ isdark }) {
 
             </div>
           </form>
-          <p className="mt-10 text-center text-sm text-gray-500">
-            Already having account?
-            <Link href={'/login'}> <span href="#" className="text-lg font-semibold leading-6 mx-2 text-maincolor ">Login</span></Link>
-          </p>
+        
 
         </div>
       </div>

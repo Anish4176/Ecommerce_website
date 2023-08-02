@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-07-02T08:40:52.777Z",
-            "modified": "2023-08-02T14:06:24.639Z",
+            "modified": "2023-08-02T14:47:50.638Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "[{\n\"title\":\"Cooler Master MP511 Gaming Mouse Pad\",\n\"slug\":\"daakghkkFjgsgms;llbjkdfvhghvjlg\",\n\"desc\":\"The MP511 Mouse Pad is an upgrade in every sense of the word, featuring legendary CORDURA® fabric for improved durability, flawless splash resistance, and smooth performance for generations of battles to come.\",\n\"price\":249,\n\"img\":\"https://www.primeabgb.com/wp-content/uploads/2021/08/Cooler-Master-MP511-Gaming-Mouse-Pad-Large-MP-511-CBLC1.jpg\",\n\"size\":\"S\",\n\"color\":\"Black\",\n\"category\":\"mousepads\",\n\"availableQty\":100\n}]",
+                "raw": "[{\n\"title\":\"Cotton Blend Regular Fit Men's Open Sweatshirt\",\n\"slug\":\"daakghkkFjgsggmsdcf;fllbjkdFfvhghvjlg\",\n\"desc\":\"This Sporty Sweatshirt From Altlife Is In A Solid Shade Of Navy Blue With Yellow Accents And Features Full Sleeves, A Hood With Drawstrings, And Elasticated Wrists.\",\n\"price\":1449,\n\"img\":\"https://sslimages.shoppersstop.com/sys-master/images/h04/hdc/26426939277342/A21ALTJPSW010N_NAVY.jpg_230Wx334H\",\n\"size\":\"S\",\n\"color\":\"Black\",\n\"category\":\"sweatshirts\",\n\"availableQty\":100\n}]",
                 "form": []
             },
             "tests": []
