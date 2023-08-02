@@ -81,16 +81,16 @@
             "colId": "5e3aa0df-3e8c-4376-b540-07e4e0951ddf",
             "containerId": "",
             "name": "loginuser",
-            "url": "http://localhost:3000/api/login",
+            "url": "https://ecommerce-website-l7besyysz-anish4176.vercel.app//api/login",
             "method": "POST",
             "sortNum": 50000,
             "created": "2023-07-04T13:58:45.342Z",
-            "modified": "2023-07-04T14:00:25.957Z",
+            "modified": "2023-08-02T04:52:54.844Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\":\"anishsingh41764176@gmail.com\",\n  \"password\":\"12\"\n}",
+                "raw": "{\n  \"email\":\"anishsin2gh4176@gmail.com\",\n  \"password\":\"1\"\n}",
                 "form": []
             },
             "tests": []
