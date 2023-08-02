@@ -28,8 +28,8 @@ function Signup({ isdark }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: name, email: email, password: password })
     };
-    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, requestOptions);
     setOpen(true);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, requestOptions);
     const data = await response.json();
     setOpen(false);
     setname('');

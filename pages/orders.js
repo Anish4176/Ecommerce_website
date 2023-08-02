@@ -14,6 +14,7 @@ function Orders({ isdark }) {
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('USER'));
         const orders = async () => {
+            setOpen(true);
             const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/orders`, {
                 method: "POST",
                 headers: {
@@ -21,7 +22,7 @@ function Orders({ isdark }) {
                 },
                 body: JSON.stringify({ token: user.token }),
             });
-            setOpen(true);
+          
             let order = await response.json();
             setOpen(false);
             setorders(order);

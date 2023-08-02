@@ -20,8 +20,8 @@ function Slug({ isdark, addToCart, product, variants, buyCart, error }) {
   const [open, setOpen] = React.useState(false);
 
   const handlepincheck = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
     setOpen(true);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
     const checkpin = await response.json();
     setOpen(false);
     for (let i in checkpin) {
@@ -95,7 +95,7 @@ function Slug({ isdark, addToCart, product, variants, buyCart, error }) {
         <div className="mx-auto w-[100%]  py-8 ">
           <div className=" mx-auto flex justify-center flex-wrap">
             <img alt="ecommerce" className="lg:w-[65vh]   w-[80%] md:w-[60%] lg:h-[80vh] h-[50vh]  object-top rounded" src={product.img} />
-            <div className="lg:w-1/2 pl-[1.3rem] md:mx-10  lg:py-3 mt-6 lg:mt-0">
+            <div className="lg:w-1/2 px-[1.3rem] md:mx-10  lg:py-3 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">TechWearOnline</h2>
               <h1 className={`${isdark ? 'text-white' : 'text-gray-900'} font-bold text-2xl md:text-4xl  text-black mb-1`}>{product.title} ({product.size} / {product.color}) </h1>
               <h2 className="text-md title-font mt-3 font-bold text-gray-900 tracking-widest">Product Description :</h2>
@@ -135,13 +135,13 @@ function Slug({ isdark, addToCart, product, variants, buyCart, error }) {
                 {product.availableQty > 0 && <span className={`${isdark ? 'text-white' : 'text-gray-900'} title-font font-medium text-2xl text-gray-900`}>₹{product.price}</span>}
                 {product.availableQty <= 0 && <span className="title-font font-medium text-red-500 text-xl  md:text-2xl ">Out of Stock!</span>}
 
-                <button disabled={product.availableQty <= 0} onClick={() => { buyCart(slug, 1, product.price, product.title, product.color, product.size) }} className="  flex disabled:bg-submaincolor ml-2   md:ml-8 text-white bg-maincolor border-0 py-2 px-3 md:px-6 focus:outline-none hover:bg-maincolor rounded">Buy Now</button>
+                <button disabled={product.availableQty <= 0} onClick={() => { buyCart(slug, 1, product.price, product.title, product.color, product.size) }} className="  flex disabled:bg-submaincolor ml-5   md:ml-8 text-white bg-maincolor border-0 py-2 px-3 md:px-6 focus:outline-none hover:bg-maincolor rounded">Buy Now</button>
 
                 <button disabled={product.availableQty <= 0} onClick={() => { addToCart(slug, 1, product.price, product.title, product.color, product.size) }} className="flex ml-3 disabled:bg-submaincolor text-white bg-maincolor border-0 py-2 px-3 md:px-6 focus:outline-none hover:bg-maincolor rounded">Add to Cart</button>
               </div>
               <div className='flex mt-9 mb-3 justify-start items-center '>
                 <input onChange={onchange} type="text" className='border border-maincolor p-2 rounded' placeholder='Enter your Pincode' />
-                <button onClick={handlepincheck} className='flex ml-4 text-white bg-maincolor border-0 py-2 px-6 focus:outline-none hover:bg-maincolor rounded'>Check</button>
+                <button onClick={handlepincheck} className='flex ml-4 text-white bg-maincolor border-0 py-2 px-4 focus:outline-none hover:bg-maincolor rounded'>Check</button>
               </div>
 
               {(service && service != null) && <div className='text-green-600 font-bold'>Yay! This pincode is serviceable</div>}

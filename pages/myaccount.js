@@ -36,6 +36,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
 
   const fetchuser = async (token) => {
     const data = token;
+    setOpen(true);
     const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
       method: "POST",
       headers: {
@@ -43,7 +44,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
       },
       body: JSON.stringify(data),
     });
-    setOpen(true);
+   
     let res = await response.json();
     setOpen(false);
     setname(res.name);
@@ -55,6 +56,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
 
   const handleupdate = async () => {
     const data = { token: user.token, name, address, phone, pincode };
+    setOpen(true);
     const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/updateuser`, {
       method: "POST",
       headers: {
@@ -62,7 +64,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
       },
       body: JSON.stringify(data),
     });
-    setOpen(true);
+    
     let res = await response.json();
     setOpen(false);
     if (res.success) {
@@ -83,6 +85,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
 
     if (newpassword === confirmnewpassword) {
       const data = { token: user.token, newpassword, password };
+      setOpen(true);
       const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/updatepassword`, {
         method: "POST",
         headers: {
@@ -90,7 +93,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
         },
         body: JSON.stringify(data),
       });
-      setOpen(true);
+      
       let res = await response.json();
       setOpen(false);
       if (res.success) {

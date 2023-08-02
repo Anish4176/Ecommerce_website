@@ -45,6 +45,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
 
   const fetchuser = async (token) => {
     const data = token;
+    setOpen(true);
     const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
       method: "POST",
       headers: {
@@ -52,7 +53,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
       },
       body: JSON.stringify(data),
     });
-    setOpen(true);
+   
     let res = await response.json();
     setOpen(true);
     setname(res.name);
@@ -64,8 +65,8 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
 
   const getpincode = async (pin) => {
     setpincode(pin)
-    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
     setOpen(true);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
     const checkpin = await response.json();
     setOpen(false);
     pin = pin.trim();
@@ -125,6 +126,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
 
       let orderId = Math.floor(Math.random() * Date.now());
       const data = { name, email, orderId, cart, subtotal, address, phone, pincode };
+      setOpen(true);
       const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/initiatetransaction`, {
         method: "POST",
         headers: {
@@ -132,7 +134,7 @@ function Checkout({ isdark, cart, clearCart, addToCartincheckout, addToCart, rem
         },
         body: JSON.stringify(data),
       });
-      setOpen(true);
+     
       let order = await response.json();
       setOpen(false);
       if (order.success) {

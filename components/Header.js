@@ -18,7 +18,7 @@ function Header() {
                   <Link href="/tshirt" className="">
                     <Image
                       className="h-[27rem] rounded-lg transition hover:duration-300 hover:scale-110"
-                      src="/IMG7.avif"
+                      src="/IMG1.avif"
                       alt="wrappixel kit"
                       width={450}
                       height={1000}
