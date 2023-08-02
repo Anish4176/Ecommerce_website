@@ -23,7 +23,7 @@ function Slug({ isdark, addToCart, product, variants, buyCart, error }) {
     const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`);
     setOpen(true);
     const checkpin = await response.json();
-    setOpen(true);
+    setOpen(false);
     for (let i in checkpin) {
       if (pin === i) {
         setservice(true);
